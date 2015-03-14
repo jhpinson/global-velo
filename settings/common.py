@@ -117,6 +117,7 @@ INSTALLED_APPS = (
     'pipeline',
     'crispy_forms',
     'password_reset',
+    'utils',
 
     #models
     'users',

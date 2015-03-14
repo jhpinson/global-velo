@@ -1,24 +1,110 @@
 {% extends "base.html" %}
-{% block "content" %}
-<h4>Django 1.6 Boilerplate</h4>
+{% load i18n staticfiles %}
 
-<ul>
-    <li>
-        <a href="{% url "users-user-create" %}">créer un compte utilisateur</a>
-    </li>
+{% block content %}
 
-    <li>
-        <a href="{% url "contact-send" %}">formulaire de contact</a>
-    </li>
+<section class="slider bg1 with-trame">
+      <div class="container">
+        <div class="slide-box">
+          <h1>location de vélo</h1>
+          <h2>Envie d’évasion pour ce week-end ?</h2><a class="btn btn-primary btn-big">LOUEZ UN VTT</a>
+        </div>
+        <div class="btns-switch"><a class="btn btn-switch btn-switch-velo">Location de vélo</a><a class="btn btn-switch btn-secondary btn-switch-box">Location box de réparation</a></div>
+      </div>
+    </section>
+    <section class="home-boxes">
+      <div class="container">
+        <div class="row eqh">
+          <div class="col-sm-4">
+            <div class="box">
+              <header class="box-header box-velo">
+                <h2 class="box-title">Louez un vtt</h2>
+              </header>
+              <div class="content">
+                <form id="" method="" action="">
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-4 text-right">
+                        <label>Location du :</label>
+                      </div>
+                      <div class="col-xs-8">
+                        <input type="text" class="calendrier">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-4 text-right">
+                        <label>au :</label>
+                      </div>
+                      <div class="col-xs-8">
+                        <input type="text" class="calendrier">
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-block">C'est parti !</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="box"><img src="{% static 'img/box-info-bg.jpg' %}" alt="">
+              <footer class="box-footer"> <a href="#">Tout savoir sur notre boutique !</a></footer>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="box box-invert">
+              <header class="box-header">
+                <h2 class="box-title">Votre météo ce week-end</h2>
+              </header>
+              <div class="content">
+                <div class="row text-center">
+                  <div class="col-6">
+                    <h4>Samedi</h4><img src="{% static 'img/1.png' %}" alt="">
+                  </div>
+                  <div class="col-6">
+                    <h4>Dimanche</h4><img src="{% static 'img/2.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="box">
+              <header class="box-header box-box">
+                <h2 class="box-title">Louez un box de réparation</h2>
+              </header>
+              <div class="content">
+                <form id="" method="" action="">
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-4 text-right">
+                        <label>Location du :</label>
+                      </div>
+                      <div class="col-xs-8">
+                        <input type="text" class="calendrier">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-4 text-right">
+                        <label>au :</label>
+                      </div>
+                      <div class="col-xs-8">
+                        <input type="text" class="calendrier">
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-block">C'est parti !</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    {% if request.user.is_authenticated %}
-        <li>
-            <a href="{% url "users-user-logout" %}">logout</a>
-        </li>
-    {% else %}
-        <li>
-            <a href="{% url "users-user-login" %}">login</a>
-        </li>
-    {% endif %}
-</ul>
 {% endblock %}

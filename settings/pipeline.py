@@ -4,13 +4,22 @@ PIPELINE_JS_COMPRESSOR = None
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 PIPELINE_CSS = {
-    'base': {
+    'main': {
         'source_filenames': (
-            'css/style.css',
+            'css/main.css',
+            'css/dev.css',
+            'css/dev-menu.css',
         ),
-        'output_filename': 'c/base.css',
+        'output_filename': 'c/main.css',
     },
 }
-PIPELINE_COMPILERS = (
-    'pipeline.compilers.stylus.StylusCompiler',
-)
+
+PIPELINE_JS = {
+    'lazy': {
+        'source_filenames': (
+            'js/gmap.js',
+
+        ),
+        'output_filename': 'c/lazy.js',
+    },
+}

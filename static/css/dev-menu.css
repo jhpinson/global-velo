@@ -1,0 +1,90 @@
+.nav-header .submenu {
+    top : 100px;
+}
+
+
+
+#menu-vertical > li:hover > ul {
+    display:block;
+
+}
+
+.nav-header .submenu {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.submenu {
+
+    -webkit-border-bottom-right-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+
+}
+
+.submenu li {
+    padding: 0 2px;
+}
+
+.submenu li a {
+    border-bottom: 1px solid #E1E7E6;
+    color: #4f4f51;
+    text-align: left;
+    text-indent: 28px;
+
+    transition: text-indent 0.2s ease-in-out;
+    -webkit-transition: text-indent 0.2s ease-in-out;
+    -moz-transition: text-indent 0.2s ease-in-out;
+
+}
+
+.submenu li a:hover {
+    text-indent: 32px;
+}
+
+#menu-vertical .menu-mag .submenu {
+    background: -webkit-linear-gradient(bottom, rgb(230, 249, 172) , rgb(121, 145, 49)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgb(230, 249, 172), rgb(121, 145, 49)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgb(230, 249, 172), rgb(121, 145, 49)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, rgb(230, 249, 172) , rgb(121, 145, 49)); /* Standard syntax (must be last) */
+}
+
+#menu-vertical .menu-mag .submenu li a {
+    border-bottom: 1px solid rgb(121, 145, 49);
+}
+
+#menu-vertical .menu-atelier .submenu {
+    background: -webkit-linear-gradient(bottom, rgb(251, 195, 172) , rgb(218, 83, 52)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgb(251, 195, 172), rgb(218, 83, 52)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgb(251, 195, 172), rgb(218, 83, 52)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, rgb(251, 195, 172) , rgb(218, 83, 52)); /* Standard syntax (must be last) */
+}
+
+#menu-vertical .menu-atelier .submenu li a {
+    border-bottom: 1px solid rgb(218, 83, 52);
+}
+
+#menu-vertical .menu-velo .submenu {
+    background: -webkit-linear-gradient(bottom, rgb(185, 233, 244) , rgb(32, 120, 149)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgb(185, 233, 244), rgb(32, 120, 149)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgb(185, 233, 244), rgb(32, 120, 149)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, rgb(185, 233, 244) , rgb(32, 120, 149)); /* Standard syntax (must be last) */
+}
+
+#menu-vertical .menu-velo .submenu li a {
+    border-bottom: 1px solid rgb(32, 120, 149);
+}
+
+#menu-vertical .menu-blog .submenu {
+    background: -webkit-linear-gradient(bottom, rgb(250, 247, 160) , rgb(197, 159, 86)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgb(250, 247, 160), rgb(197, 159, 86)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgb(250, 247, 160), rgb(197, 159, 86)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, rgb(250, 247, 160), rgb(197, 159, 86)); /* Standard syntax (must be last) */
+}
+
+#menu-vertical .menu-blog .submenu li a {
+    border-bottom: 1px solid rgb(197, 159, 86);
+}

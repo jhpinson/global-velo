@@ -1,0 +1,45 @@
+
+.site-header {
+    z-index: 3;
+}
+
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -318px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 318px;
+}
+
+@media (max-width: 768px) {
+
+    .page-wrap {
+        margin-bottom: -545px;
+    }
+
+    .site-footer, .page-wrap:after {
+      height: 545px;
+    }
+
+}
+
+
+.address p {
+    margin-bottom : 5px;
+}
+
+.subtitle {
+    color: #86b323;
+}
+
+.row-spacer-bottom {
+    margin-bottom: 20px;
+}
