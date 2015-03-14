@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block "content" %}
+<h4>Django 1.6 Boilerplate</h4>
+
+<ul>
+    <li>
+        <a href="{% url "users-user-create" %}">créer un compte utilisateur</a>
+    </li>
+
+    <li>
+        <a href="{% url "contact-send" %}">formulaire de contact</a>
+    </li>
+
+    {% if request.user.is_authenticated %}
+        <li>
+            <a href="{% url "users-user-logout" %}">logout</a>
+        </li>
+    {% else %}
+        <li>
+            <a href="{% url "users-user-login" %}">login</a>
+        </li>
+    {% endif %}
+</ul>
+{% endblock %}

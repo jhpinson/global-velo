@@ -1,0 +1,13 @@
+Django==1.7.6
+psycopg2==2.5.4
+django-crispy-forms==1.4.0
+django-grappelli==2.6.3
+django-pipeline==1.4.7
+django-redis==3.8.3
+hiredis==0.1.6
+path.py==7.2
+sorl-thumbnail==12.2
+django-class-based-auth-views==0.3
+django-templated-email==0.4.9
+django_model_utils==2.2
+pillow==2.7.0

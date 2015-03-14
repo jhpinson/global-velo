@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block "content" %}
+	
+		
+		<div class="col col-center w700p">
+		  
+		    <h1 class="tag text-center">
+          Réinitialiser mon mot de passe
+        </h1> 
+		  
+        <form method="post" action="{{ url }}">
+          
+          <div class="alert alert-info">
+            Remplissez le formulaire ci-dessous. Un email contenant les informations nécessaires à la réinitialisation de votre mot de passe vous sera envoyé. 
+          </div>
+          
+          {% crispy form %}
+          
+          <div class="buttonHolder">
+            <a href="{% url "users-user-login" %}?next={{request.GET.next|default:"/"}}" class="btn btn-default ">Annuler</a>
+            <input type="submit" class="btn btn-primary " value="Réinitialiser mon mot de passe">
+          </div>
+          
+        </form>
+  </div>
+		
+{% endblock %}
