@@ -19,7 +19,7 @@ TEMPLATE_LOADERS = (
 )
 
 
-ALLOWED_HOSTS = 'www.global-velo.pro',
+ALLOWED_HOSTS = 'www.global-velo.pro', 'beta.global-velo.pro',
 
 MEDIA_URL = 'http://medias.global-velo.pro/'
 STATIC_URL = 'http://statics.global-velo.pro/'
