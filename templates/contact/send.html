@@ -13,26 +13,41 @@
             <h1>{% trans "Nous contacter" %}</h1>
           </header>
           <div class="page-content">
-            <article class="post post-societe">
+            <article class="post post-contact">
               <div class="row">
-                <div class="col-6">
+                <div class="col-9">
                   <form data-ajax-uri="{% url 'shop-contact-ajax' %}" action="{% url 'shop-contact' %}" method="POST">
                     <div class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
                         {% trans "Votre message a été envoyé !" %}
                     </div>
 
-
                       {% crispy form %}
+
                       <div class="buttonHolder right">
                         <input type="submit" class="btn btn-primary " value="Envoyer">
                       </div>
                     </form>
                 </div>
 
-                <div class="col-6">
+                <div class="col-3" >
                      <p>
-                     bla vla
+
+                        <h3>Horaires d'ouvertues</h3>
+                        Du mardi au samedi, 9h - 12h, 15h - 19h
+
                      </p>
+                     <p>
+                        <h3>Adresse postale</h3>
+                         <address itemscope itemtype="http://schema.org/Organization">
+                            <span itemprop="name">SAS Global Vélo</span>
+                            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                <span itemprop="streetAddress">16 rue Clémenceau</span><br>
+                                <span itemprop="postalCode">64800</span>
+                                <span itemprop="addressLocality">Nay, France</span>
+                            </div>
+                        </address>
+                        <strong>Téléphone :</strong> <a itemprop="telephone" href="tel:+33559322785">+33 (0)5 59 32 27 85</a> <br>
+                    </p>
                 </div>
 
               </div>

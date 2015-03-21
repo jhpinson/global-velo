@@ -1,4 +1,4 @@
-{% block subject %}[PREFIX] {{subject}}{% endblock %}
+{% block subject %}[global-velo-pro] {{subject}}{% endblock %}
 {% block plain %}expéditeur: {{email}}
 
 {{message}}

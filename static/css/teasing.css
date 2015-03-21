@@ -1,7 +1,53 @@
-  body {
-      background-color: #232325 !important;
-  }
+body {
+    background-color: #232325 !important;
+}
 
-  .page {
-      opacity: 0.9
-  }
+.page {
+    opacity: 0.9
+}
+
+.slider {
+    background: url("../img/bg/nay-bg.jpg") center no-repeat;
+    background-size: cover;
+    max-height: 100%;
+}
+
+.slide-box {
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3em 2em;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    box-shadow: 0 0 15px rgba(0, 1, 1, 0.1);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.slide-box h1 {
+    color: #232325;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .slide-box h1 {
+        font-size: 35px;
+    }
+}
+
+.slide-box h2 {
+    color: #232325;
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .slide-box h2 {
+        font-size: 35px;
+    }
+}

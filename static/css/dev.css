@@ -7,7 +7,7 @@ html, body {
     height: 100%;
 }
 
-h4 {
+h4, h3 {
     margin-bottom: 5px;
 }
 
@@ -30,11 +30,11 @@ h4 {
 @media (max-width: 768px) {
 
     .page-wrap {
-        margin-bottom: -545px;
+        margin-bottom: auto;
     }
 
     .site-footer, .page-wrap:after {
-        height: 545px;
+        height: auto;
     }
 
 }
@@ -77,4 +77,26 @@ button.btn-switch, .btn.btn-switch {
 
 input[type=submit] {
     width: auto !important
+}
+
+.form-success {
+    padding: 10px;
+  border: 1px solid #86b323;
+  color: #86b323;
+  background-color: rgb(237, 237, 237);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.post-contact .col-3 {
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+
+    .post-contact .col-3 {
+        padding-top: auto;
+        margin-top: 50px;
+    }
+
 }

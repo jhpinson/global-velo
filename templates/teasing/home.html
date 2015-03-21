@@ -1,19 +1,24 @@
 {% extends "base.html" %}
 
  {% block content %}
-    <section class="slider bg1 with-trame">
+
+     <div class="slider bg with-trame"> </div>
+
+     <section class="site-content with-background">
       <div class="container">
-        <div class="slide-box">
-          <h1>Global vélo </h1>
-          <h2>Inauguration le 28 mars à 15h00</h2>
-          <div style="padding-bottom:10px; font-weight:bold; text-transform:uppercase">
-            Petits fours et raffraichissements offerts
+            <div class="slide-box">
+              <h1>Global vélo </h1>
+              <h2>Inauguration le 28 mars à 15h00</h2>
+              <div style="padding-bottom:10px; font-weight:bold; text-transform:uppercase">
+                Petits fours et raffraichissements offerts
+              </div>
+              <div style="">
+                Pour tout renseignement, utilisez notre formulaire de <a class="" href="{% url 'shop-contact' %}">contact</a>
+              </div>
+            </div>
           </div>
-          <div style="">
-            Pour tout renseignement, utilisez notre formulaire de <a class="" href="{% url 'shop-contact' %}">contact</a>
-          </div>
-        </div>
-      </div>
-    </section>
+     </section>
+
+
 
  {% endblock %}
