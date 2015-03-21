@@ -22,7 +22,6 @@ TEMPLATE_LOADERS = (
 ALLOWED_HOSTS = 'www.global-velo.pro',
 
 MEDIA_URL = 'http://medias.global-velo.pro/'
-
 STATIC_URL = 'http://statics.global-velo.pro/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
