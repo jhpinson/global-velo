@@ -1,24 +1,29 @@
 # encoding: utf-8
 from __future__ import unicode_literals, absolute_import
 
+import json
+
 from django.core.urlresolvers import reverse
+from django.http.response import HttpResponse
 from django.views.generic.edit import FormView
 from django.conf import settings
 
 from templated_email import send_templated_mail
 
 from . import forms
+from utils.ajax import serialize_form_errors
+
 
 class Contact(FormView):
-    
+
     form_class = forms.Contact
     template_name = "contact/send.html"
-    
+
     def get_success_url(self):
         return reverse('contact-sent')
-    
+
     def form_valid(self, form):
-        
+
         send_templated_mail(
                     template_name='contact',
                     from_email=settings.DEFAULT_FROM_EMAIL,
@@ -30,5 +35,33 @@ class Contact(FormView):
                         'email': form.cleaned_data['email']
                     }
                 )
-        
+
         return super(Contact, self).form_valid(form)
+
+
+class AjaxContact(Contact):
+
+    def form_invalid(self, form):
+        return HttpResponse(json.dumps({
+            "success": False,
+            "errors": serialize_form_errors(form)
+        }), content_type='application/json')
+
+    def form_valid(self, form):
+
+        super(AjaxContact, self).form_valid(form)
+
+        response = {'success' : True, 'reset' : True}
+
+        return HttpResponse(json.dumps(response), content_type='application/json')
+
+
+class ContactSent(Contact):
+
+    def get_context_data(self, **kwargs):
+
+        context = super(ContactSent, self).get_context_data(**kwargs)
+
+        context['show_success_message'] = True
+
+        return context

@@ -7,6 +7,9 @@ from django.views.generic.base import TemplateView
 from . import views
 
 urlpatterns = patterns('',
-  url(r'^contact.html$', views.Contact.as_view(), name='contact-send'),
-  url(r'^message-envoye.html$', TemplateView.as_view(template_name='contact/sent.html'), name='contact-sent'),
+  url(r'^nous-contacter\.html$', views.Contact.as_view(), name='shop-contact'),
+  url(r'^message-envoye.html$', views.ContactSent.as_view(), name='contact-sent'),
+
+  url(r'^ajax-post-contact/$', views.AjaxContact.as_view(), name='shop-contact-ajax'),
+
 )

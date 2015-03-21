@@ -20,7 +20,7 @@ urlpatterns += patterns('',
     # sub menu shop
     (r'^presentation-du-magasin\.html$', TemplateView.as_view(template_name="shop/introduction.html"), {}, "shop-introduction"),
     (r'^nos-partnaires\.html$', TemplateView.as_view(template_name="shop/partners.html"), {}, "shop-partners"),
-    (r'^nous-contacter\.html$', TemplateView.as_view(template_name="shop/contact.html"), {}, "shop-contact"),
+    #(r'^nous-contacter\.html$', TemplateView.as_view(template_name="shop/contact.html"), {}, "shop-contact"),
 
     # workshop
     (r'^les-services-reparation\.html$', TemplateView.as_view(template_name="workshop/introduction.html"), {}, "workshop-introduction"),
@@ -34,7 +34,7 @@ urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^users/', include("users.urls")),
-    url(r'^contact/', include("contact.urls")),
+    url(r'', include("contact.urls")),
     url(r'', include('password_reset.urls')),
 )
 urlpatterns += staticfiles_urlpatterns()

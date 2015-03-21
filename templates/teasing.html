@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+
+    {% load i18n staticfiles pipeline  copyright %}
+
+    <meta charset="utf-8">
+    <title>Global V&eacute;lo{% block meta-title %}{% endblock %}</title>
+    <meta name="description" content="{% block meta-description %}{% endblock %}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <!--<link href="img/favicon.png" rel="shortcut icon">-->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+    {% stylesheet "teasing" %}
+
+
+    <!--[if (lt IE 9) & (!IEMobile)]>
+        <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="with-background">
+
+    <div class="page-wrap">
+        <section class="slider bg1 with-trame">
+          <div class="container">
+            <div class="slide-box">
+              <h1>location de vélo</h1>
+              <h2>Envie d’évasion pour ce week-end ?</h2><a class="btn btn-primary btn-big">LOUEZ UN VTT</a>
+            </div>
+          </div>
+        </section>
+    </div>
+
+    <div class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <p><img src="{% static 'img/logo-footer.png' %}" alt="VTT" class="logo-footer"></p>
+            <div><br>©{% copyright_year %} <a href>SAS Global Vélo</a> Tous droits réservés<br><a href="{% url 'legal-mentions' %}">Mentions légales</a></div>
+          </div>
+
+
+
+          <div class="col-4">
+            <h3>{% trans "CONTACTEZ-NOUS" %}</h3>
+            <address itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">SAS Global Vélo</span>
+                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">16 rue Clémenceau</span><br>
+                    <span itemprop="postalCode">64800</span>
+                    <span itemprop="addressLocality">Nay, France</span>
+                </div>
+            </address>
+            <strong>Téléphone :</strong> <a itemprop="telephone" href="tel:+33559322785">+33 (0)5 59 32 27 85</a> <br>
+            <strong><a href="{% url 'shop-contact' %}">E-mail</a></strong> <br>
+          </div>
+          <div class="col-4">
+            <h3>{% trans "NOUS SUIVRE" %}</h3>
+            <ul class="social-links">
+              <li><a target="blank" href="#" class="facebook"> <i class="icon-facebook"> </i></a></li>
+              <li><a target="blank" href="#" class="twitter"></a></li>
+              <li><a target="blank" rel="publisher" href="#" class="google"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    {% block lazy-js %}
+
+        {% javascript "lazy" %}
+
+    {% endblock %}
+
+  </body>
+</html>

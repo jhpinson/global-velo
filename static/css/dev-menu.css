@@ -3,18 +3,14 @@
 }
 
 
+#menu-vertical > li > .submenu {
+    display:block !important;
+    height: 0;
+    overflow : hidden;
 
-#menu-vertical > li:hover > ul {
-    display:block;
-
-}
-
-.nav-header .submenu {
-    padding-bottom: 0;
-    padding-top: 0;
-}
-
-.submenu {
+    transition: height 0.2s ease-in-out;
+    -webkit-transition: height 0.2s ease-in-out;
+    -moz-transition: height 0.2s ease-in-out;
 
     -webkit-border-bottom-right-radius: 2px;
     -webkit-border-bottom-left-radius: 2px;
@@ -22,7 +18,24 @@
     -moz-border-radius-bottomleft: 2px;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
+}
 
+
+#menu-vertical > li.menu-mag:hover > .submenu {
+    height: 77px;
+}
+
+#menu-vertical > li.menu-atelier:hover > .submenu {
+    height: 51px;
+}
+
+#menu-vertical > li.menu-velo:hover > .submenu {
+    height: 102px;
+}
+
+.nav-header .submenu {
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .submenu li {

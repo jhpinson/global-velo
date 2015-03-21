@@ -19,7 +19,7 @@
 
     if ($('#map').length > 0) {
 
-      var position = new google.maps.LatLng(43.1784004,-0.2617271999999957);
+      var position = new google.maps.LatLng(43.1788795, -0.2617652999999791);
 
       var mapOptions = {
         center: position,
@@ -37,7 +37,7 @@
 
     }
 
-    //geocodeAddress('1 r Pyrénées, 64800 NAY', map);
+    //geocodeAddress('16 rue Clémenceau, 64800 NAY', map);
 
 
 

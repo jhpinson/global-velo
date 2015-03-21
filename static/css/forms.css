@@ -1,0 +1,8 @@
+.has-error {
+    color : rgb(232, 58, 58)
+}
+
+.has-error input, .has-error textarea {
+    border-left: 5px solid rgb(232, 58, 58);
+    color : rgb(232, 58, 58)
+}

@@ -1,0 +1,35 @@
+{% load i18n staticfiles  copyright %}
+<div class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <p><a href="/"><img src="{% static 'img/logo-footer.png' %}" alt="VTT" class="logo-footer"></a></p>
+        <div><br>©{% copyright_year %} <a href>SAS Global Vélo</a> Tous droits réservés<br><a href="{% url 'legal-mentions' %}">Mentions légales</a></div>
+      </div>
+
+
+
+      <div class="col-4">
+        <h3>{% trans "CONTACTEZ-NOUS" %}</h3>
+        <address itemscope itemtype="http://schema.org/Organization">
+            <span itemprop="name">SAS Global Vélo</span>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="streetAddress">16 rue Clémenceau</span><br>
+                <span itemprop="postalCode">64800</span>
+                <span itemprop="addressLocality">Nay, France</span>
+            </div>
+        </address>
+        <strong>Téléphone :</strong> <a itemprop="telephone" href="tel:+33559322785">+33 (0)5 59 32 27 85</a> <br>
+        <strong>Contactez-nous par <a href="{% url 'shop-contact' %}">e-mail</a></strong> <br>
+      </div>
+      <div class="col-4">
+        <h3>{% trans "NOUS SUIVRE" %}</h3>
+        <ul class="social-links">
+          <li><a target="blank" href="https://www.facebook.com/globalvelo" class="facebook"> <i class="icon-facebook"> </i></a></li>
+          <!--<li><a target="blank" href="#" class="twitter"></a></li>
+          <li><a target="blank" rel="publisher" href="#" class="google"></a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

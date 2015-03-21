@@ -248,11 +248,6 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
   margin: 0;
   padding: 0; }
 
-/**
- * Give form elements some cursor interactions...
- */
-label, input, textarea, button, select, option {
-  cursor: pointer; }
 
 .text-input:active, .text-input:focus, textarea:active, textarea:focus {
   cursor: text;
@@ -609,7 +604,8 @@ form.border-radius input, form.border-radius select, form.border-radius textarea
   color: #556073; }
 
 label {
-  margin-bottom: .3em; }
+  margin-bottom: .3em;
+  padding-top: 10px;}
 
 .input-error {
   color: #e2001a;

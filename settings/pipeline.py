@@ -9,15 +9,31 @@ PIPELINE_CSS = {
             'css/main.css',
             'css/dev.css',
             'css/dev-menu.css',
+            'css/home-boxes.css',
+            'css/forms.css',
         ),
         'output_filename': 'c/main.css',
+    },
+
+    'teasing': {
+        'source_filenames': (
+            'css/main.css',
+            'css/dev.css',
+            'css/forms.css',
+            'css/teasing.css'
+        ),
+        'output_filename': 'c/teasing.css',
     },
 }
 
 PIPELINE_JS = {
     'lazy': {
         'source_filenames': (
+            'js/ajax-form.js',
+            'js/ajax-form-validation.js',
             'js/gmap.js',
+            'js/switch-boxes.js',
+            'js/forms.js',
 
         ),
         'output_filename': 'c/lazy.js',
