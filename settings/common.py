@@ -21,7 +21,7 @@ ADMINS = (
     ('Jean-Hugues Pinson', 'jean-hugues@jacquieetmichel.net'),
 )
 CONTACT_EMAIL = environ.get('CONTACT_EMAIL', 'jean-hugues@jacquieetmichel.net')
-
+DEFAULT_FROM_EMAIL = 'no-reply@global-velo.pro'
 MANAGERS = ADMINS
 
 DATABASES = {
