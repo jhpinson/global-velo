@@ -88,13 +88,13 @@ input[type=submit] {
   text-align: center;
 }
 
-.post-contact .col-3 {
+.post-contact .col-4 {
     padding-top: 10px;
 }
 
 @media (max-width: 768px) {
 
-    .post-contact .col-3 {
+    .post-contact .col-4 {
         padding-top: auto;
         margin-top: 50px;
     }

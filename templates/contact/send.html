@@ -15,7 +15,7 @@
           <div class="page-content">
             <article class="post post-contact">
               <div class="row">
-                <div class="col-9">
+                <div class="col-8">
                   <form data-ajax-uri="{% url 'shop-contact-ajax' %}" action="{% url 'shop-contact' %}" method="POST">
                     <div class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
                         {% trans "Votre message a été envoyé !" %}
@@ -29,7 +29,7 @@
                     </form>
                 </div>
 
-                <div class="col-3" >
+                <div class="col-4" >
                      <p>
 
                         <h3>Horaires d'ouvertues</h3>
