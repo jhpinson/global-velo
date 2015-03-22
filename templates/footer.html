@@ -9,9 +9,9 @@
 
 
 
-      <div class="col-4">
+      <div class="col-4" itemscope itemtype="http://schema.org/Organization">
         <h3>{% trans "CONTACTEZ-NOUS" %}</h3>
-        <address itemscope itemtype="http://schema.org/Organization">
+        <address >
             <span itemprop="name">SAS Global Vélo</span>
             <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 <span itemprop="streetAddress">16 rue Clémenceau</span><br>
@@ -19,6 +19,7 @@
                 <span itemprop="addressLocality">Nay, France</span>
             </div>
         </address>
+
         Ouvert du mardi au samedi, de 9h à 12h et de 15h à 19h
         <strong>Téléphone :</strong> <a itemprop="telephone" href="tel:+33559322785">+33 (0)5 59 32 27 85</a> <br>
         <strong>Contactez-nous par <a href="{% url 'shop-contact' %}">e-mail</a></strong> <br>
