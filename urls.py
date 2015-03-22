@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from views import Home
+from views import Home, RobotsTxt
 
 admin.autodiscover()
 
@@ -14,7 +14,6 @@ urlpatterns = patterns('')
 
 urlpatterns += patterns('',
     (r'^$', Home.as_view(), {}, "home"),
-
     (r'^mentions-legales\.html$', TemplateView.as_view(template_name="legal-mentions.html"), {}, "legal-mentions"),
 
     # sub menu shop
@@ -33,9 +32,13 @@ urlpatterns += patterns('',
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^users/', include("users.urls")),
+    #url(r'^users/', include("users.urls")),
     url(r'', include("contact.urls")),
-    url(r'', include('password_reset.urls')),
+    #url(r'', include('password_reset.urls')),
+
+    url(r'', include('sitemap.urls')),
+    (r'^robots\.txt$', RobotsTxt.as_view()),
+
 )
 urlpatterns += staticfiles_urlpatterns()
 

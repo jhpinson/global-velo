@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'grappelli',
     'django.contrib.admin',
+    'django.contrib.sitemaps',
 
     PROJECT_NAME,
     'pipeline',

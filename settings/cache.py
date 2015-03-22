@@ -31,7 +31,17 @@ common.CACHES = {
             'DB': 1,
             'PARSER_CLASS': 'redis.connection.HiredisParser'
         }
+    },
+
+    'mint': {
+        'BACKEND': 'redis_cache.cache.RedisCache',
+        'LOCATION': environ.get('REDIS_HOST', '127.0.0.1') + ':'+environ.get('REDIS_PORT', '6379')+':2',
+        'OPTIONS': {
+            'PARSER_CLASS': 'redis.connection.HiredisParser',
+            'CLIENT_CLASS' : 'mcache.client.mint.MintClient'
+        }
     }
+
 }
 
 # Thumbnail
