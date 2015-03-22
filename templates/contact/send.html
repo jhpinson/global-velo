@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load i18n crispy_forms_tags %}
 
+{% block meta-title %} - Nous contacter{% endblock %}
+{% block meta-description %}Vous trouverez ici touts les informations pour nous contacter.{% endblock %}
 
 {% block content %}
 
@@ -36,9 +38,9 @@
                         Du mardi au samedi, 9h - 12h, 15h - 19h
 
                      </p>
-                     <p>
+                     <p itemscope itemtype="http://schema.org/Organization">
                         <h3>Adresse postale</h3>
-                         <address itemscope itemtype="http://schema.org/Organization">
+                         <address >
                             <span itemprop="name">SAS Global Vélo</span>
                             <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                                 <span itemprop="streetAddress">16 rue Clémenceau</span><br>
@@ -47,6 +49,13 @@
                             </div>
                         </address>
                         <strong>Téléphone :</strong> <a itemprop="telephone" href="tel:+33559322785">+33 (0)5 59 32 27 85</a> <br>
+                        <br>
+                        <strong >{% trans "Coordonnées GPS" %}</strong>
+                        <div itemtype="http://data-vocabulary.org/Geo">
+                            <span itemprop="latitude" content="43.1788795" >Latitude : 43.1788795</span><br>
+                            <span itemprop="longitude" content="-0.2617652999999791" >Longitude : -0.2617652999999791</span>
+                        </div>
+
                     </p>
                 </div>
 
