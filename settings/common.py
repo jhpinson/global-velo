@@ -119,10 +119,14 @@ INSTALLED_APPS = (
     'crispy_forms',
     'password_reset',
     'utils',
+    'sorl.thumbnail',
+    'ordered_model',
 
     #models
     'users',
     'contact',
+    'partners',
+    'bikes',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =  ('django.contrib.auth.context_processors.auth',

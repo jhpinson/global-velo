@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n staticfiles %}
+{% load i18n staticfiles thumbnail %}
 
 {% block meta-title %} - Location de vélos{% endblock %}
 
@@ -43,14 +43,43 @@
           </header>
           <div class="page-content">
             <ul class="filters">
-              <li><a href="">Vélo enfant</a></li>
-              <li><a href="">VTT tout suspendu</a></li>
-              <li><a href="">VTT semi rigide</a></li>
-              <li><a href="">VTC </a></li>
-              <li><a href="">Vélo de route</a></li>
+                {% for category in categories %}
+                <li><a href data-category="{{ category.pk }}">{{ category.label }}</a></li>
+                {% endfor %}
+
             </ul>
             <ul class="list-items">
-              <li>
+
+              {% for bike in bikes %}
+                  <li>
+                    <article class="item">
+                      <header class="item-header">
+                        <h2 class="item-title">{{ bike.label }}</h2>
+                      </header>
+                      <div class="item-content">
+
+                        {% thumbnail bike.picture '200x130'  upscale=True as im %}
+                        <img src="{{ im.url }}" alt="{{ bike.label }}" class="item-thumb"/>
+                        {% endthumbnail %}
+
+                        <div class="item-price">{{ bike.price }} €</div>
+                        <div class="item-excerpt">
+                          <p>{{ bike.description }}<a class="more">Lire la suite</a></p>
+                        </div>
+                        <select name="">
+                            <option value="">Choix de la taille</option>
+                            {% for size in bike.sizes.all %}
+                                <option value="{{ size.pk }}">{{ size.label }}</option>
+                            {% endfor %}
+                        </select>
+                        <p class="text-center"><small> <a  href="{% url "bike-choose-your-bike" %}" target="_blank" class="guide-taille">voir le guide des tailles</a></small></p>
+                        <button class="btn btn-block">Sélectionner</button>
+                      </div>
+                    </article>
+                  </li>
+              {% endfor %}
+
+              <!--<li>
                 <article class="item">
                   <header class="item-header">
                     <h2 class="item-title">VTT de descente <span class="expert">expert</span></h2>
@@ -67,61 +96,8 @@
                     <button class="btn btn-block">Sélectionner</button>
                   </div>
                 </article>
-              </li>
-              <li>
-                <article class="item">
-                  <header class="item-header">
-                    <h2 class="item-title">VTT de descente <span class="expert">expert</span></h2>
-                  </header>
-                  <div class="item-content"><img src="img/thumbs/vtt.jpg" alt="" class="item-thumb"/>
-                    <div class="item-price">105,00 €</div>
-                    <div class="item-excerpt">
-                      <p>Un VTT Performance Freeride/DH permet de repousser ses limites sur tous les parcours descendants. Il vous...<a class="more">Lire la suite</a></p>
-                    </div>
-                    <select name="">
-                      <option value="">Choix de la taille</option>
-                    </select>
-                    <p class="text-center"><small> <a class="guide-taille">voir le guide des tailles</a></small></p>
-                    <button class="btn btn-block">Sélectionner</button>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="item">
-                  <header class="item-header">
-                    <h2 class="item-title">VTT de descente <span class="expert">expert</span></h2>
-                  </header>
-                  <div class="item-content"><img src="img/thumbs/vtt.jpg" alt="" class="item-thumb"/>
-                    <div class="item-price">105,00 €</div>
-                    <div class="item-excerpt">
-                      <p>Un VTT Performance Freeride/DH permet de repousser ses limites sur tous les parcours descendants. Il vous...<a class="more">Lire la suite</a></p>
-                    </div>
-                    <select name="">
-                      <option value="">Choix de la taille</option>
-                    </select>
-                    <p class="text-center"><small> <a class="guide-taille">voir le guide des tailles</a></small></p>
-                    <button class="btn btn-block">Sélectionner</button>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="item">
-                  <header class="item-header">
-                    <h2 class="item-title">VTT de descente <span class="expert">expert</span></h2>
-                  </header>
-                  <div class="item-content"><img src="img/thumbs/vtt.jpg" alt="" class="item-thumb"/>
-                    <div class="item-price">105,00 €</div>
-                    <div class="item-excerpt">
-                      <p>Un VTT Performance Freeride/DH permet de repousser ses limites sur tous les parcours descendants. Il vous...<a class="more">Lire la suite</a></p>
-                    </div>
-                    <select name="">
-                      <option value="">Choix de la taille</option>
-                    </select>
-                    <p class="text-center"><small> <a class="guide-taille">voir le guide des tailles</a></small></p>
-                    <button class="btn btn-block">Sélectionner</button>
-                  </div>
-                </article>
-              </li>
+              </li>-->
+
             </ul>
           </div>
           <div class="page-content with-grad recap-section">

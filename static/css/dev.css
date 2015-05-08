@@ -100,3 +100,42 @@ input[type=submit] {
     }
 
 }
+
+
+.slider-home {
+    max-height: 700px !important;
+}
+
+.home-boxes {
+    background : #e5e5e5;;
+}
+
+.partner-info {
+  float: left;
+  margin-right: 10px;
+  border-bottom: 1px solid rgb(144, 185, 56);
+  padding: 2px 5px;
+  background: rgb(234, 234, 234);
+}
+
+@media (max-width: 990px) {
+    .slide-box {
+        position:relative !important;
+        top: 200px !important;
+    }
+
+    .btns-switch {
+        position:relative;
+        height: 50px;
+        margin-top : 50px;
+    }
+
+    .box-card {
+        height: 228px;
+    }
+    .box-card-container {
+        margin-bottom: 248px;
+
+    }
+
+}

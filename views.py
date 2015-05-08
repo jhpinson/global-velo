@@ -12,7 +12,7 @@ class RobotsTxt(TemplateView):
 
 class Home(TemplateView):
 
-    template_name = 'teasing/home.html'
+    template_name = 'home.html'
 
     @method_decorator(cache_page(60, cache='mint'))
     def dispatch(self, request, *args, **kwargs):

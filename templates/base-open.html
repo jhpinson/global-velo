@@ -59,10 +59,38 @@
                         <li><a href="">{% trans "Vélos d'occasion" %}</a></li>
                   </ul>
                 </li>
-                <li class="menu-blog">
-                    <a href="">{% trans "La vie du magasin" %}</a>
-                </li>
+
               </ul>
+
+               <ul id="mnu-mobile">
+                   <li>
+                       <a href="">{% trans "Le magasin" %}</a>
+
+                       <ul class="">
+                        <li><a href="{% url 'shop-introduction' %}">{% trans "Présentation" %}</a></li>
+                        <li><a href="{% url 'shop-partners' %}">{% trans "Partenaires" %}</a></li>
+                        <li><a href="{% url 'shop-contact' %}">{% trans "Nous contacter" %}</a></li>
+                      </ul>
+
+                   </li>
+                   <li>
+                       <a href="">{% trans "L'atelier" %}</a>
+                   <ul class="">
+                       <li><a href="{% url 'workshop-introduction' %}">{% trans "Services" %}</a></li>
+                        <li><a href="{% url 'workshop-box-rental' %}">{% trans "Réserver un box" %}</a></li>
+                       </ul>
+                   </li>
+                   <li>
+                       <a href="">{% trans "Vélos" %}</a>
+                       <ul class="">
+                            <li><a href="{% url 'bike-rental' %}">{% trans "Louer un vélo" %}</a></li>
+                            <li><a href="{% url 'bike-choose-your-bike' %}">{% trans "Choisir son vélo" %}</a></li>
+                            <li><a href="">{% trans "Vélos neufs" %}</a></li>
+                            <li><a href="">{% trans "Vélos d'occasion" %}</a></li>
+                      </ul>
+                   </li>
+
+               </ul>
             </nav>
           </div>
         </header>
