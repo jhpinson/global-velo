@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+
+{% block content %}
+
+    <section class="slider slider-home bg1 with-trame">
+        <div class="container">
+            <div class="slide-box">
+                <h1 style="font-size: 30px;  margin-bottom: 10px;">Location, vente et réparation <br>de votre vélo à Nay
+                </h1>
+
+                <h2>Envie d’évasion pour ce week-end ?</h2><a class="btn btn-primary btn-big">LOUEZ UN VTT</a>
+            </div>
+            <div class="btns-switch">
+                <a class="btn btn-switch btn-switch-velo" data-switch-target="box-bike"
+                   data-switch-active>{% trans "Louer" %}</a>
+                <a class="btn btn-switch btn-secondary btn-switch-box"
+                   data-switch-target="box-workshop">{% trans "Réparer" %}</a>
+            </div>
+        </div>
+    </section>
+    <section class="home-boxes">
+        <div class="container">
+            <div class="row eqh">
+
+
+                <div class="col-sm-4">
+
+                    <div class="box-card-container">
+
+                        <div class="box box-card" id="box-workshop" data-switch-item>
+                            <header class="box-header box-box">
+                                <h2 class="box-title">Louer un box de réparation</h2>
+                            </header>
+                            <div class="content">
+                                <form id="" method="GET" action="{% url 'workshop-box-rental' %}">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-4 text-right">
+                                                <label>Location du :</label>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <input type="text" class="calendrier">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-4 text-right">
+                                                <label>au :</label>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <input type="text" class="calendrier">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-block">C'est parti !</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="box box-card" id="box-bike" data-switch-item>
+                            <header class="box-header box-velo">
+                                <h2 class="box-title">Louer un vélo</h2>
+                            </header>
+                            <div class="content">
+                                <form id="" method="GET" action="{% url 'bike-rental' %}">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-4 text-right">
+                                                <label>Location du :</label>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <input type="text" class="calendrier">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-4 text-right">
+                                                <label>au :</label>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <input type="text" class="calendrier">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-block">C'est parti !</button>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-sm-4">
+                    <div class="box">
+                        <img src="{% static 'img/box-info-bg.jpg' %}" alt="">
+                        <footer class="box-footer"><a href="#">venez découvrir notre gamme de vélo</a></footer>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="box box-invert">
+                        <header class="box-header">
+                            <h2 class="box-title">Votre météo ce week-end</h2>
+                        </header>
+                        <div class="content">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h4>Samedi</h4><img src="{% static 'img/1.png' %}" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <h4>Dimanche</h4><img src="{% static 'img/1.png' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+{% endblock %}

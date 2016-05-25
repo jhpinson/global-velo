@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block "content" %}
+  
+    <div class="col col-center w700p">
+      
+      {% if invalid %}{% url "password_reset_recover" as recovery_url %}
+        <div class"alert alert-warning">
+          Le lien sur lequel vous avez cliqué est périmé. Veuillez ré-essayer en cliquant sur le lien suivant: <a href="{{ recovery_url }}">récupérer mon mot de passe</a>.
+        </div>
+      {% else %}
+      
+        <form method="post" action="{% url "password_reset_reset" token %}">
+          
+          <h2>Changement de mot de passe</h2>
+          
+          {% crispy form %}
+          
+          <div class="buttonHolder">
+            <a href="{% url "users-user-login" %}?next={{request.GET.next|default:"/"}}" class="btn btn-default ">Annuler</a>
+            <input type="submit" class="btn btn-primary " value="Enregistrer">
+          </div>
+          
+        </form>
+      {% endif %}
+    </div>
+    
+{% endblock %}

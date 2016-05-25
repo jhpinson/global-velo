@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+
+{% block meta-title %} - Mentions légales{% endblock %}
+
+{% block content %}
+
+    <div class="slider bg with-trame"> </div>
+    <section class="site-content with-background">
+      <div class="container">
+        <div class="page">
+          <header class="page-header">
+            <h1>{% trans "Mentions légales" %}</h1>
+          </header>
+          <div class="page-content">
+            <article class="post post-societe">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="page-title subtitle">{% trans "Réalisation et hébergement" %}</h2>
+                  <p>
+                    Le site a été réalisé à titre gracieux par Jean-hugues Pinson.
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="page-title subtitle">{% trans "Cookies" %}</h2>
+
+                    <h4>Qu’est ce que les cookies ?</h4>
+                    <p>
+                        Un cookie est une information déposée sur le disque dur d’un internaute par le serveur du site qu'il visite. Il contient plusieurs données : le nom du serveur qui l'a déposé, un identifiant sous forme de numéro unique, éventuellement une date d'expiration. Ces informations sont parfois stockées sur l’ordinateur dans un simple fichier texte auquel un serveur accède pour lire et enregistrer des informations.
+                    </p>
+
+                    <h4>A quoi servent les cookies ?</h4>
+                    <p>www.global-velo.pro utilise les cookies pour le stockage temporaire des informations liées à la réservations de vélos.</p>
+
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="page-title subtitle">{% trans "Copyright" %}</h2>
+                  <p>
+                    Toutes les pages de ce site web sont protégées par le droit d'auteur français et la législation sur la protection des bases de données. Aucune reproduction de ce document, même partielle, autres que celles prévues à l'article L 122-5 du Code de la propriété intellectuelle, ne peut être faite sans l'autorisation expresse de l'éditeur.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load i18n staticfiles thumbnail %}
+
+{% block meta-title %} - Nos partenaires{% endblock %}
+
+{% block content %}
+
+    <div class="bg with-trame"> </div>
+    <section class="site-content with-background">
+      <div class="container">
+        <div class="page">
+          <header class="page-header">
+            <h1>{% trans "Nos partenaires" %}</h1>
+          </header>
+          <div class="page-content">
+            <article class="post post-societe">
+
+               {% for partner in partners %}
+
+                  <div class="row row-spacer-bottom" >
+                    <div class="col-sm-6 col-9">
+                      <h3 class="page-title subtitle" itemprop="name">{{ partner.name }}</h3>
+                      <p >
+                        {{ partner.description }}
+                      </p>
+
+
+                      <div class="partner-infos">
+                      {% if partner.website %}
+                      <div class="partner-info"><a target="_blank" href="{{ partner.website }}">site internet</a></div>
+                      {% endif %}
+
+                      {% if partner.phone %}
+
+                      <div class="partner-info"><a href="tel:{{ partner.phone }}">{{ partner.phone }}</a></div>
+                      {% endif %}
+
+                       {% if partner.email %}
+                      <div class="partner-info"><a href="mailto:{{ partner.email }}">{{ partner.email }}</a></div>
+                      {% endif %}
+                        </div>
+                    </div>
+
+                    {% if partner.picture %}
+                        {% thumbnail partner.picture '200' as im %}
+                         <div class="col-sm-6 col-3">
+                            <img src="{{ im.url }}" alt="{{ partner.name }}" width="{{ im.width }}" height="{{ im.height }}">
+                         </div>
+                         {% endthumbnail %}
+                    {% endif %}
+                  </div>
+
+              {% endfor %}
+
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

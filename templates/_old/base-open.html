@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+
+    {% load i18n staticfiles pipeline  copyright %}
+
+    <meta charset="utf-8">
+    <title>Global V&eacute;lo{% block meta-title %}{% endblock %}</title>
+    <meta name="description" content="{% block meta-description %}{% endblock %}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <!--<link href="img/favicon.png" rel="shortcut icon">-->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+    {% stylesheet "main" %}
+
+
+    <!--[if (lt IE 9) & (!IEMobile)]>
+        <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="with-background">
+
+    <div class="page-wrap">
+        <header class="site-header">
+          <div class="container">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="location de vélos" class="logo">
+            </a>
+            <nav class="nav nav-header">
+              <div class="nav-toggle"><a href=""></a></div>
+              <ul id="menu-vertical">
+                <li class="menu-mag">
+                  <a href="">{% trans "Le magasin" %}</a>
+
+                      <ul class="submenu">
+                        <li><a href="{% url 'shop-introduction' %}">{% trans "Présentation" %}</a></li>
+                        <li><a href="{% url 'shop-partners' %}">{% trans "Partenaires" %}</a></li>
+                        <li><a href="{% url 'shop-contact' %}">{% trans "Nous contacter" %}</a></li>
+                      </ul>
+
+                </li>
+                <li class="menu-atelier">
+                  <a href="">{% trans "L'atelier" %}</a>
+                  <ul class="submenu">
+                    <li><a href="{% url 'workshop-introduction' %}">{% trans "Services" %}</a></li>
+                    <li><a href="{% url 'workshop-box-rental' %}">{% trans "Réserver un box" %}</a></li>
+                  </ul>
+                </li>
+                <li class="menu-velo">
+                    <a href="">{% trans "Vélos" %}</a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'bike-rental' %}">{% trans "Louer un vélo" %}</a></li>
+                        <li><a href="{% url 'bike-choose-your-bike' %}">{% trans "Choisir son vélo" %}</a></li>
+                        <li><a href="">{% trans "Vélos neufs" %}</a></li>
+                        <li><a href="">{% trans "Vélos d'occasion" %}</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+
+               <ul id="mnu-mobile">
+                   <li>
+                       <a href="">{% trans "Le magasin" %}</a>
+
+                       <ul class="">
+                        <li><a href="{% url 'shop-introduction' %}">{% trans "Présentation" %}</a></li>
+                        <li><a href="{% url 'shop-partners' %}">{% trans "Partenaires" %}</a></li>
+                        <li><a href="{% url 'shop-contact' %}">{% trans "Nous contacter" %}</a></li>
+                      </ul>
+
+                   </li>
+                   <li>
+                       <a href="">{% trans "L'atelier" %}</a>
+                   <ul class="">
+                       <li><a href="{% url 'workshop-introduction' %}">{% trans "Services" %}</a></li>
+                        <li><a href="{% url 'workshop-box-rental' %}">{% trans "Réserver un box" %}</a></li>
+                       </ul>
+                   </li>
+                   <li>
+                       <a href="">{% trans "Vélos" %}</a>
+                       <ul class="">
+                            <li><a href="{% url 'bike-rental' %}">{% trans "Louer un vélo" %}</a></li>
+                            <li><a href="{% url 'bike-choose-your-bike' %}">{% trans "Choisir son vélo" %}</a></li>
+                            <li><a href="">{% trans "Vélos neufs" %}</a></li>
+                            <li><a href="">{% trans "Vélos d'occasion" %}</a></li>
+                      </ul>
+                   </li>
+
+               </ul>
+            </nav>
+          </div>
+        </header>
+
+        {% block content %}{% endblock %}
+    </div>
+
+    {% include 'footer.html' %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    {% block lazy-js %}
+
+        {% javascript "lazy" %}
+
+    {% endblock %}
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-61048724-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+</html>

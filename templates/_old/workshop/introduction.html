@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+
+{% block meta-title %} - Les services en atelier{% endblock %}
+
+
+{% block content %}
+
+    <div class="bg with-trame"> </div>
+    <section class="site-content with-background">
+      <div class="container">
+        <div class="page">
+          <header class="page-header">
+            <h1>{% trans "L'atelier" %}</h1>
+          </header>
+          <div class="page-content">
+            <article class="post post-societe">
+
+              <div class="row row-spacer-bottom" >
+                <div class="col-sm-6 col-8" >
+
+                  <p >
+                  Pas moins de 50 m&sup2; sont consacrés à l'entretien de vos vélos.
+                  </p>
+                  <p>
+                      Nous porterons la même attention à vos vélos, qu'ils soient destinés à la compétition, à la ballade dominicale ou qu'ils soient votre moyen de transport quotidien.
+                  </p>
+                  <p style="text-align:center"><strong>Votre satisfaction est notre priorité !</strong></p>
+                </div>
+
+                  <div class="col-sm-6 col-4"><img src="{% static 'img/pages/entretien-reparation-velos.jpg' %}" alt=""></div>
+
+              </div>
+
+
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
