@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from views import Home, RobotsTxt
+from views import Home, RobotsTxt,Magasin, Mentions
 
 admin.autodiscover()
 
@@ -18,18 +18,12 @@ urlpatterns += patterns('',
     url(r'', include('partners.urls')),
     url(r'', include('bikes.urls')),
 
-    (r'^mentions-legales\.html$', TemplateView.as_view(template_name="legal-mentions.html"), {}, "legal-mentions"),
-
-    # sub menu shop
-    (r'^presentation-du-magasin\.html$', TemplateView.as_view(template_name="shop/introduction.html"), {}, "shop-introduction"),
+    (r'^presentation-du-magasin\.html$', Magasin.as_view(), {}, "magasin"),
+    (r'^mentions-legales/$', Mentions.as_view(), {}, "mentions"),
 
     #(r'^nous-contacter\.html$', TemplateView.as_view(template_name="shop/contact.html"), {}, "shop-contact"),
-
-    # workshop
-    (r'^les-services-reparation\.html$', TemplateView.as_view(template_name="workshop/introduction.html"), {}, "workshop-introduction"),
-    (r'^location-de-box-reparation\.html$', TemplateView.as_view(template_name="workshop/workshop-box-rental-pending.html"), {}, "workshop-box-rental"),
-
-
+    #(r'^les-services-reparation\.html$', TemplateView.as_view(template_name="workshop/introduction.html"), {}, "workshop-introduction"),
+    #(r'^location-de-box-reparation\.html$', TemplateView.as_view(template_name="workshop/workshop-box-rental-pending.html"), {}, "workshop-box-rental"),
 
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
