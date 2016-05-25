@@ -13,11 +13,22 @@ from templated_email import send_templated_mail
 from . import forms
 from utils.ajax import serialize_form_errors
 
+from pages.models import Page, Section
+from partners.models import Partner
 
 class Contact(FormView):
 
     form_class = forms.Contact
     template_name = "contact/send.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(Contact, self).get_context_data(*args, **kwargs)
+        section = Section.objects.get(pk=1)
+        context['pages'] = Page.objects.filter(section=section, visible=True)
+        context['partners'] = Partner.objects.filter(active=True)
+        
+        return context
+
 
     def get_success_url(self):
         return reverse('contact-sent')

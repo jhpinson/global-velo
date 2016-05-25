@@ -6,6 +6,7 @@ from . import views
 from django.views.generic.base import TemplateView
 
 urlpatterns = patterns('',
-    (r'^location-de-velos\.html$', views.BikeRental.as_view(), {}, "bike-rental"),
-    (r'^conseils-pour-choisir-son-velo\.html$', TemplateView.as_view(template_name="bike/choose-your-bike.html"), {}, "bike-choose-your-bike"),
+    (r'^location-de-velos/$', views.BikeRental.as_view(), {}, "bike-rental"),
+    (r'^nos-velos/$', views.BikeSell.as_view(), {}, "bike-sell"),
+    
 )

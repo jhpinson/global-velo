@@ -6,7 +6,7 @@ from crispy_forms.helper import FormHelper
 
 class Contact(forms.Form):
     
-    email = forms.EmailField(label='Votre adresse email')
+    email = forms.EmailField(label='Adresse e-mail')
     subject = forms.CharField(label="Sujet", max_length=255)
     message = forms.CharField(label="Message", max_length=2048, widget=forms.Textarea)
 
