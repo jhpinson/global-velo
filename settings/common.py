@@ -123,10 +123,13 @@ INSTALLED_APPS = (
     'ordered_model',
 
     #models
+    'facepy',
     'users',
     'contact',
     'partners',
     'bikes',
+    'slideshow',
+    'pages'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =  ('django.contrib.auth.context_processors.auth',
@@ -160,6 +163,11 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'sorlHandler': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'sorl.thumbnail.log.ThumbnailLogHandler'
         }
     },
     'loggers': {
@@ -168,8 +176,18 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'sorl.thumbnail': {
+            'handlers': ['sorlHandler'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
     }
 }
 
 GRAPPELLI_CLEAN_INPUT_TYPES = False
 TEST_RUNNER = "django.test.simple.DjangoTestSuiteRunner"
+
+FB_APP_ACCESS_TOKEN = '2022156814675175|wZvYhwUwcfBmRKVbI4_IkYyTOHM'
+FB_APP_ID = '2022156814675175'
+
+
