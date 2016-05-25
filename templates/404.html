@@ -1,1 +1,51 @@
-404
+{% extends "base.html" %}
+{% block meta %}
+    <title>Global Vélo – locations de vélos pour vos balades autour de Nay, Pau, Lourdes ou Tarbes.</title>
+    <meta property="og:title" content="Global Vélo" />
+    <meta property="og:locale" content="{{ LOCALE }}" />
+    <meta property="og:site_name" content="Global Vélo" />
+    <meta property="og:url" content="{{ DOMAIN }}" />
+    <meta property="og:description" content="Locations de vélos pour vos balades autour de Nay, Pau, Lourdes ou Tarbes.">
+    <meta name="description" content="Locations de vélos pour vos balades autour de Nay, Pau, Lourdes ou Tarbes.">
+{% endblock meta %}
+
+
+{% block bodyclass %}page{% endblock bodyclass %}
+
+{% load staticfiles utils crispy_forms_tags thumbnail %}
+
+{% block content %}
+        
+
+        <main class="page">
+
+            <div class="wrapper">
+                <nav class="subnav">
+                   Erreur                  
+                </nav>    
+                <section>
+                                
+                
+                    <article >
+                    
+                        <h2>404</h2>
+                        
+                        <div class="text">
+                            Le document que vous demandez n’est pas diponible.
+                        </div>
+                    
+                    </article>
+                
+
+                </section>
+            </div>
+                   
+        </main>
+      
+    
+{% endblock content %}
+
+{% block javascripts %}
+    {{ block.super }}
+    
+{% endblock javascripts %}
