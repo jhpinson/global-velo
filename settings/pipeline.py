@@ -6,13 +6,7 @@ STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 PIPELINE_CSS = {
     'main': {
         'source_filenames': (
-            'js/libs/jquery.bxslider/jquery.bxslider.css',
             'css/main.css',
-            'css/dev.css',
-            'css/dev-menu.css',
-            'css/home-boxes.css',
-            'css/forms.css',
-            'css/teasing.css'
         ),
         'output_filename': 'c/main.css',
     },
@@ -33,9 +27,8 @@ PIPELINE_JS = {
         'source_filenames': (
             'js/ajax-form.js',
             'js/ajax-form-validation.js',
-            'js/gmap.js',
-            'js/switch-boxes.js',
             'js/forms.js',
+            'js/utils.js',
             'js/menu.js',
 
         ),
