@@ -1,0 +1,736 @@
+[
+{
+    "fields": {
+        "domain": "example.com",
+        "name": "example.com"
+    },
+    "model": "sites.site",
+    "pk": 1
+},
+{
+    "fields": {
+        "username": "Admin",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2016-05-24T12:10:32.503",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$15000$uw3ydMVDQGmK$omy5zVPJtVQWhXiMSWMT+dY4KKaoeyxULqDSFoIVeT8=",
+        "email": "julienbidoret@gmail.com",
+        "date_joined": "2016-03-08T17:16:06.546"
+    },
+    "model": "users.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "website": "http://www.ktm-bikes.at/",
+        "picture": "partners/ktm.png",
+        "name": "KTM",
+        "created": "2016-05-23T02:57:41.452",
+        "modified": "2016-05-23T10:40:53.707",
+        "email": "",
+        "phone": "",
+        "active": true,
+        "order": 0,
+        "description": "KTM Bikes"
+    },
+    "model": "partners.partner",
+    "pk": 1
+},
+{
+    "fields": {
+        "website": "http://fr.bbbcycling.com/",
+        "picture": "partners/bbb.png",
+        "name": "BBB",
+        "created": "2016-05-23T03:00:18.817",
+        "modified": "2016-05-23T10:41:00.910",
+        "email": "",
+        "phone": "",
+        "active": true,
+        "order": 1,
+        "description": "BBB cycling"
+    },
+    "model": "partners.partner",
+    "pk": 2
+},
+{
+    "fields": {
+        "website": "http://www.montanabike.com/?lang=fr",
+        "picture": "partners/montana_wCmzEBy.png",
+        "name": "Montana",
+        "created": "2016-05-23T03:00:39.267",
+        "modified": "2016-05-23T10:58:03.146",
+        "email": "",
+        "phone": "",
+        "active": true,
+        "order": 2,
+        "description": "Montana Bike"
+    },
+    "model": "partners.partner",
+    "pk": 3
+},
+{
+    "fields": {
+        "website": "http://www.bhbikes.com/index.php?lang=fr",
+        "picture": "partners/bh.png",
+        "name": "BH",
+        "created": "2016-05-23T03:01:16.577",
+        "modified": "2016-05-23T10:41:19.537",
+        "email": "",
+        "phone": "",
+        "active": true,
+        "order": 3,
+        "description": "BH bikes"
+    },
+    "model": "partners.partner",
+    "pk": 4
+},
+{
+    "fields": {
+        "website": "http://givresdenay.clubeo.com/",
+        "picture": "partners/gdn.png",
+        "name": "Les givr\u00e9s de Nay",
+        "created": "2016-05-23T03:02:21.796",
+        "modified": "2016-05-23T10:41:32.651",
+        "email": "",
+        "phone": "",
+        "active": true,
+        "order": 4,
+        "description": "Les givr\u00e9s de Nay"
+    },
+    "model": "partners.partner",
+    "pk": 5
+},
+{
+    "fields": {
+        "website": "http://tourisme-bearn-paysdenay.com/fr/",
+        "picture": "partners/pdnay_5w2iA1i.png",
+        "name": "Office du tourisme",
+        "created": "2016-05-23T03:04:49.733",
+        "modified": "2016-05-23T10:57:31.465",
+        "email": "",
+        "phone": "",
+        "active": true,
+        "order": 5,
+        "description": "Office du tourisme du pays de Nay"
+    },
+    "model": "partners.partner",
+    "pk": 6
+},
+{
+    "fields": {
+        "short_label": "vtc",
+        "label": "VTC"
+    },
+    "model": "bikes.category",
+    "pk": 1
+},
+{
+    "fields": {
+        "short_label": "vtt",
+        "label": "VTT"
+    },
+    "model": "bikes.category",
+    "pk": 2
+},
+{
+    "fields": {
+        "short_label": "vae",
+        "label": "V\u00e9los \u00e9lectriques"
+    },
+    "model": "bikes.category",
+    "pk": 3
+},
+{
+    "fields": {
+        "short_label": "route",
+        "label": "Route"
+    },
+    "model": "bikes.category",
+    "pk": 4
+},
+{
+    "fields": {
+        "title": "KTM"
+    },
+    "model": "bikes.brand",
+    "pk": 2
+},
+{
+    "fields": {
+        "title": "BBB"
+    },
+    "model": "bikes.brand",
+    "pk": 3
+},
+{
+    "fields": {
+        "title": "Montana"
+    },
+    "model": "bikes.brand",
+    "pk": 4
+},
+{
+    "fields": {
+        "title": "BH"
+    },
+    "model": "bikes.brand",
+    "pk": 5
+},
+{
+    "fields": {
+        "label": "S"
+    },
+    "model": "bikes.size",
+    "pk": 1
+},
+{
+    "fields": {
+        "label": "M"
+    },
+    "model": "bikes.size",
+    "pk": 2
+},
+{
+    "fields": {
+        "label": "L"
+    },
+    "model": "bikes.size",
+    "pk": 3
+},
+{
+    "fields": {
+        "label": "Xl"
+    },
+    "model": "bikes.size",
+    "pk": 4
+},
+{
+    "fields": {
+        "picture": "bikes/G-271-copia.jpg",
+        "description": "Cadre aluminium, 21 vitesses, freins V-brake, selle Royal, pneus \"increvables\", porte-bagages, lampes avant & arri\u00e8re, roues 28\", gardes-boue, poids 14 KG, antivol, kit de r\u00e9paration, gilet jaune.",
+        "visible": true,
+        "gender": "man",
+        "price": "15.00",
+        "sizes": [
+            1,
+            2,
+            3
+        ],
+        "label": "VTC Argos",
+        "for_sale": false,
+        "second_hand": false,
+        "brand": 4,
+        "categories": [
+            1
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 1
+},
+{
+    "fields": {
+        "picture": "bikes/G-2395-copia.jpg",
+        "description": "Cadre aluminium, 21 vitesses, freins V-brake, selle Royal, pneus \"increvables\", porte-bagages, lampes avant & arri\u00e8re, roues 28\", gardes-boue, poids 14 KG, antivol, kit de r\u00e9paration, gilet jaune.                                                              ",
+        "visible": true,
+        "gender": "woman",
+        "price": "15.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "VTC Ares",
+        "for_sale": false,
+        "second_hand": false,
+        "brand": 4,
+        "categories": [
+            1
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 2
+},
+{
+    "fields": {
+        "picture": "bikes/G-719-M-copia.jpg",
+        "description": "HI TEN TIG H. 30\r\n\r\nforcella AMMORTIZZATA / SUSPENSED / SUSPENDUE\r\n\r\nmanubrio HI-TEN\r\n\r\nfreni V-BRAKE ALLOY\r\n\r\nruote ALLOY\r\n\r\ncopertone 20X1,90\r\n\r\ncambio-posteriore SHIMANO TY-21\r\n\r\nleve-cambio SHIMANO REVO\r\n\r\ncassetta SHIMANO\r\n\r\nguarnitura 40T\r\n\r\nreggisella HI-TEN\r\n\r\npeso 12,3 kg",
+        "visible": true,
+        "gender": "child",
+        "price": "12.00",
+        "sizes": [
+            1
+        ],
+        "label": "ESCAPE REVO",
+        "for_sale": false,
+        "second_hand": false,
+        "brand": 4,
+        "categories": [
+            1,
+            2
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 3
+},
+{
+    "fields": {
+        "picture": "bikes/G-4626-copia.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "woman",
+        "price": "40.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Ayda",
+        "for_sale": false,
+        "second_hand": false,
+        "brand": 4,
+        "categories": [
+            3
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 4
+},
+{
+    "fields": {
+        "picture": "bikes/ventura_cross_9_he51_matt_blackgreygreen.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "woman",
+        "price": "965.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Ventura Cross",
+        "for_sale": true,
+        "second_hand": false,
+        "brand": 2,
+        "categories": [
+            2
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 5
+},
+{
+    "fields": {
+        "picture": "bikes/wild_cross_20_12_29_matt_nightblueorangeneonblue.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "child",
+        "price": "1465.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Wild speed",
+        "for_sale": true,
+        "second_hand": true,
+        "brand": 2,
+        "categories": [
+            2
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 6
+},
+{
+    "fields": {
+        "picture": "bikes/revelator_3300_57_matt_carbonpetrolblueorange.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "child",
+        "price": "218.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Revelator",
+        "for_sale": true,
+        "second_hand": false,
+        "brand": 2,
+        "categories": [
+            4
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 7
+},
+{
+    "fields": {
+        "picture": "bikes/G-4626-copia.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "man",
+        "price": "456.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Myroon",
+        "for_sale": true,
+        "second_hand": false,
+        "brand": 2,
+        "categories": [
+            2
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 8
+},
+{
+    "fields": {
+        "picture": "bikes/macina_action_27_11_cx5_48_matt_blackwhitegreen.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "man",
+        "price": "842.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Macina Action",
+        "for_sale": true,
+        "second_hand": false,
+        "brand": 4,
+        "categories": [
+            3
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 9
+},
+{
+    "fields": {
+        "picture": "bikes/wood.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "man",
+        "price": "312.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Wood Type",
+        "for_sale": true,
+        "second_hand": true,
+        "brand": 4,
+        "categories": [
+            3
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 10
+},
+{
+    "fields": {
+        "picture": "bikes/life_lontano_p18_he46_matt_titangreyorange.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "man",
+        "price": "641.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Life Lontano",
+        "for_sale": true,
+        "second_hand": false,
+        "brand": 2,
+        "categories": [
+            1
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 11
+},
+{
+    "fields": {
+        "picture": "bikes/city_line_28_7_us46_petrolblackberry.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "woman",
+        "price": "1280.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "City Line",
+        "for_sale": true,
+        "second_hand": false,
+        "brand": 2,
+        "categories": [
+            1
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 12
+},
+{
+    "fields": {
+        "picture": "bikes/chicago_27_24_disc_h_36_matt_orangeblack.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "man",
+        "price": "968.50",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Chicago",
+        "for_sale": true,
+        "second_hand": false,
+        "brand": 2,
+        "categories": [
+            2
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 13
+},
+{
+    "fields": {
+        "picture": "bikes/aera_27_pro_2f_48_matt_carbonwhitesilverorangel.jpg",
+        "description": "ALLOY 6061 H. 43\r\n\r\ntelaioCH-141 AMS\r\n\r\ntelaio ALLOY REGOL.\r\n\r\ntelaioV-BRAKE ALLOY\r\n\r\ntelaioFULL-ALLOY\r\n\r\ntelaioALLOY 26\u2033 DOPPIA CAMERA CNC\r\n\r\ntelaio26X1,75\r\n\r\ntelaio SHIMANO TX-35\r\n\r\ntelaio SHIMANO REVO\r\n\r\ntelaio SHIMANO\r\n\r\ntelaio42X170\r\n\r\ntelaioALLOY\r\n\r\nmotoreANSMANN FM2.0\r\n\r\nbatteriaPOST. ANSMANN LI-ION 36V. 9,6AH \u2013 346 WH\r\n\r\ndisplay LED\r\n\r\ntelaio21,3 kg",
+        "visible": true,
+        "gender": "man",
+        "price": "965.00",
+        "sizes": [
+            1,
+            2
+        ],
+        "label": "Area",
+        "for_sale": true,
+        "second_hand": false,
+        "brand": 2,
+        "categories": [
+            2
+        ]
+    },
+    "model": "bikes.bike",
+    "pk": 14
+},
+{
+    "fields": {
+        "picture": "slides/hm_ktm_action_2016_005_yGBbu9m.jpg",
+        "subtitle": "Prenez la route, sortez des sentiers battus",
+        "description": "D\u00e9couvrez nos v\u00e9los en location \u00e0 la journ\u00e9e",
+        "title": "Envie d\u2019\u00e9vasion ?",
+        "url": "/location-de-velos/",
+        "visible": true
+    },
+    "model": "slideshow.slide",
+    "pk": 2
+},
+{
+    "fields": {
+        "picture": "slides/2015-03-28_16.07.54.jpg",
+        "subtitle": "Global V\u00e9lo",
+        "description": "Venez r\u00e9parer votre v\u00e9lo sous l\u2019\u0153il d\u2019un pro",
+        "title": "L\u2019atelier",
+        "url": "/nous-contacter.html#latelier",
+        "visible": true
+    },
+    "model": "slideshow.slide",
+    "pk": 3
+},
+{
+    "fields": {
+        "title": "magasin"
+    },
+    "model": "pages.section",
+    "pk": 1
+},
+{
+    "fields": {
+        "title": "locations"
+    },
+    "model": "pages.section",
+    "pk": 2
+},
+{
+    "fields": {
+        "title": "vente"
+    },
+    "model": "pages.section",
+    "pk": 3
+},
+{
+    "fields": {
+        "title": "mentions"
+    },
+    "model": "pages.section",
+    "pk": 4
+},
+{
+    "fields": {
+        "picture": "slides/nay-bg-nb_fM33FSt.jpg",
+        "subtitle": "",
+        "texte": "<p>Le magasin est situ&eacute; au c&oelig;ur de la ville de Nay, aux pieds des Pyr&eacute;n&eacute;es, entre Pau, Lourdes et Tarbes. Il propose des services de location, vente et r&eacute;paration de cycles de toutes marques et pour tous les cyclistes.</p>\r\n<p>Situ&eacute; face &agrave; l'office de tourisme et &agrave; proximit&eacute; d'un parking, le magasin est le point de d&eacute;part id&eacute;al de vos balades au bord du gave et sur la <strong>V&eacute;loroute Pyr&eacute;n&eacute;es Gave Adour.</strong></p>\r\n<p>De Lestelle-B&eacute;tharram, au coeur du Pays de Nay, jusqu'&agrave; Bayonne sur la c&ocirc;te basque, cet itin&eacute;raire suit le Gave de Pau, les Gaves R&eacute;unis (de Pau et d'Oloron), et pour finir l'Adour, le tout sur&nbsp;<strong>un lin&eacute;aire de 150 km</strong>. Itin&eacute;raire non loin des <strong>cours d'eau majeurs du d&eacute;partement</strong> , il permet de d&eacute;couvrir des&nbsp;<strong>villages charg&eacute;s d'histoire</strong>&nbsp;ou des&nbsp;<strong>espaces naturels de toute beaut&eacute;</strong>.</p>\r\n<p><a href=\"http://tourisme-bearn-paysdenay.com/fr/la-velo-route\" target=\"_blank\">Cliquez ici pour en savoir plus sur la V&eacute;loroute</a>.</p>",
+        "section": 1,
+        "title": "Le magasin",
+        "visible": true,
+        "template": "default",
+        "image": "pages/nay-bg-nb_39xjovb.jpg",
+        "order": 1
+    },
+    "model": "pages.page",
+    "pk": 1
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "",
+        "section": 1,
+        "title": "Nos partenaires",
+        "visible": true,
+        "template": "partners",
+        "image": "",
+        "order": 3
+    },
+    "model": "pages.page",
+    "pk": 2
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "",
+        "section": 1,
+        "title": "Contactez-nous",
+        "visible": true,
+        "template": "contacts",
+        "image": "",
+        "order": 4
+    },
+    "model": "pages.page",
+    "pk": 3
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "<p>Nous vous accueillons du mardi au samedi, de 9h &agrave; 12h et de 15h &agrave; 19h.</p>\r\n<p><a href=\"https://goo.gl/maps/UZSFGbqkpWA2\">SAS Global V&eacute;lo<br /> 16 rue Cl&eacute;menceau<br /> 64800 Nay, France<br /> </a></p>\r\n<p>T&eacute;l&eacute;phone : +33 (0)5 59 32 27 85</p>",
+        "section": 1,
+        "title": "Nos horaires",
+        "visible": true,
+        "template": "default",
+        "image": "",
+        "order": 3
+    },
+    "model": "pages.page",
+    "pk": 4
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "<p>Bien choisir son v&eacute;lo est essentiel. Nous vous offrons un service sur-mesure, adapt&eacute; &agrave; chaque pratique du v&eacute;lo : <strong>VTT sportif, VTT de randonn&eacute;e, v&eacute;lo de route </strong>et m&ecirc;me<strong> v&eacute;lo &agrave; assistance &eacute;lectrique</strong>. Pour d&eacute;terminer la taille du v&eacute;lo, faites-nous confiance, et mentionnez votre taille dans le formulaire de r&eacute;servation.</p>\r\n<p><strong>Sportif : </strong>VTT de descente, Freeride, Downhill ou Enduro, cette cat&eacute;gorie correspond &agrave; une pratique du VTT engag&eacute;e :&nbsp; sentiers de montagne, passages techniques ou folles descentes. Le d&eacute;battement important de nos v&eacute;los dans cette cat&eacute;gorie, tout comme leur g&eacute;om&eacute;trie polyvalente et leur angle de direction ouvert vous permettront d&rsquo;&eacute;voluer en toute confiance et tous types de terrains, en mont&eacute;e comme en descente.</p>\r\n<p><strong>Randonn&eacute;e :</strong> en solo ou en famille, nos VTT de randonn&eacute;e s&rsquo;adapteront &agrave; vos envies de chemins creux ou de balades au bord de l&rsquo;eau. &Eacute;quip&eacute;s de suspensions avant pour stabiliser le v&eacute;lo dans nos chemins de montagne et de freins &agrave; disque pour faciliter les freinages, nos v&eacute;los de randonn&eacute;es sont les rois de l&rsquo;&eacute;vasion.</p>\r\n<p><strong>Route :</strong> les cols des Pyr&eacute;n&eacute;es n&rsquo;attendent que vous. N&eacute;s au pied du Soulor, nos v&eacute;los de roure sont adapt&eacute;s &agrave; la montagne : cadre compact, fourche carbone et p&eacute;dalier triple vous assurent une grimpe pleine de sensations. </p>\r\n<p><strong>V&eacute;lo &agrave; assistance &eacute;lectrique :</strong> &eacute;quip&eacute;s d&rsquo;une batterie et d'un moteur, nos VAE vous propulseront sans (trop d&rsquo;) effort des routes de campagne jusqu&rsquo;aux plus hauts sommets. D&eacute;couvrez nos v&eacute;los route et VTT &agrave; assistance &eacute;lectrique et offrez-vous la libert&eacute; de d&eacute;passer vos limites physiques ou d&rsquo;accompagner vos amis plus entra&icirc;n&eacute;s.</p>",
+        "section": 2,
+        "title": "Bien choisir son v\u00e9lo",
+        "visible": true,
+        "template": "default",
+        "image": "",
+        "order": 1
+    },
+    "model": "pages.page",
+    "pk": 5
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "<h3>Atelier ouvert</h3>\r\n<p>L&rsquo;atelier Global V&eacute;lo est ouvert ! Venez r&eacute;parer votre v&eacute;lo sous l&rsquo;&oelig;il avis&eacute;, discret et comp&eacute;tent d&rsquo;un professionel. Conseil, avantages, assistance, outillage complet, et pi&egrave;ces de rechange (selon disponibilit&eacute;) pour <strong>20&euro; / heure</strong>.</p>\r\n<h3>Forfaits r&eacute;paration et entretien</h3>\r\n<h4>Forfait promenade &mdash; 35 &euro;</h4>\r\n<ul>\r\n<li>Contr&ocirc;le indexation et r&eacute;glages</li>\r\n<li>Contr&ocirc;le freins et r&eacute;glages</li>\r\n<li>Contr&ocirc;le et d&eacute;voilage des roues</li>\r\n<li>Pression pneus</li>\r\n<li>Graissage transmission</li>\r\n</ul>\r\n<h4>Forfait loisir &mdash; 50 &euro;</h4>\r\n<ul>\r\n<li>Forfait promenade +</li>\r\n<li>Graissage bo&icirc;tier p&eacute;dalier, jeu de direction et tige de selle</li>\r\n<li>Remplacement des pi&egrave;ces d&rsquo;usure: pneus, patins et c&acirc;bles (hors pris des pi&egrave;ces)</li>\r\n</ul>\r\n<h4>Forfait complet &mdash; 85 &euro;</h4>\r\n<ul>\r\n<li>Forfait loisir +</li>\r\n<li>Entretien moyeux (+ 11&euro; moyeux billes)</li>\r\n<li>Remplacement des pi&egrave;ces d&rsquo;usure: ch&acirc;ine, cassette (hors pris des pi&egrave;ces)</li>\r\n</ul>",
+        "section": 1,
+        "title": "L\u2019atelier",
+        "visible": true,
+        "template": "default",
+        "image": "",
+        "order": 2
+    },
+    "model": "pages.page",
+    "pk": 6
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "<p>Global V&eacute;lo vous garantit une location s&ucirc;re. R&eacute;vis&eacute;s et entretenus avec soin, nos v&eacute;los de location sont irr&eacute;prochables, afin de vous offrir une balade sans risque de panne.</p>\r\n<p>Casques, chambres &agrave; air et pompes sont fournies gratuitement.</p>\r\n<p>Vous pouvez &eacute;galement embarquer un GPS pour d&eacute;couvrir la r&eacute;gion en toute tranquilit&eacute; (voir conditions en magasin).</p>",
+        "section": 2,
+        "title": "Nos services",
+        "visible": true,
+        "template": "default",
+        "image": "",
+        "order": 1
+    },
+    "model": "pages.page",
+    "pk": 7
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "<p>Venez nous rencontrez au magasin, et d&eacute;couvrez notre gamme de VTT, VTC, v&eacute;los route et v&eacute;los &agrave; assistance &eacute;lectrique. Nous s&eacute;lectionnons nos mod&egrave;les avec soin parmi les gammes de nos partenaires afin de vous garantir la meilleure qualit&eacute; au meilleur prix.</p>\r\n<p><strong>Nous sommes revendeurs agr&eacute;&eacute;s <a href=\"http://www.ktm-bikes.at/\">KTM Bikes</a> et <a href=\"http://fr.bbbcycling.com/\">BBB Cycling</a>.</strong></p>",
+        "section": 3,
+        "title": "Nos v\u00e9los",
+        "visible": true,
+        "template": "default",
+        "image": "",
+        "order": 1
+    },
+    "model": "pages.page",
+    "pk": 8
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "Revendez votre cycle r\u00e9vis\u00e9 et garanti par un pro",
+        "texte": "<p>Nous offrons un service de revente de v&eacute;los d&rsquo;occasion. Acheteur ou vendeur, n&rsquo;h&eacute;sitez pas &agrave; faire appel &agrave; nous.</p>\r\n<p>Nos v&eacute;los d&rsquo;occasion sont <strong>r&eacute;vis&eacute;s gratuitement apr&egrave;s deux mois</strong> et <strong>garantis 6 mois</strong>.</p>",
+        "section": 3,
+        "title": "Nos occasions",
+        "visible": true,
+        "template": "default",
+        "image": "",
+        "order": 3
+    },
+    "model": "pages.page",
+    "pk": 9
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "<h3>Cookies</h3>\r\n<h4>Qu&rsquo;est ce que les cookies ?</h4>\r\n<p>Un cookie est une information d&eacute;pos&eacute;e sur le disque dur d&rsquo;un internaute par le serveur du site qu'il visite. Il contient plusieurs donn&eacute;es : le nom du serveur qui l'a d&eacute;pos&eacute;, un identifiant sous forme de num&eacute;ro unique, &eacute;ventuellement une date d'expiration. Ces informations sont parfois stock&eacute;es sur l&rsquo;ordinateur dans un simple fichier texte auquel un serveur acc&egrave;de pour lire et enregistrer des informations.</p>\r\n<h4>A quoi servent les cookies ?</h4>\r\n<p>www.global-velo.pro utilise les cookies pour le stockage temporaire des informations li&eacute;es &agrave; la r&eacute;servations de v&eacute;los.</p>\r\n<h3>Copyright</h3>\r\n<p>Toutes les pages de ce site web sont prot&eacute;g&eacute;es par le droit d'auteur fran&ccedil;ais et la l&eacute;gislation sur la protection des bases de donn&eacute;es. Aucune reproduction de ce document, m&ecirc;me partielle, autres que celles pr&eacute;vues &agrave; l'article L 122-5 du Code de la propri&eacute;t&eacute; intellectuelle, ne peut &ecirc;tre faite sans l'autorisation expresse de l'&eacute;diteur.</p>",
+        "section": 4,
+        "title": "Mentions l\u00e9gales",
+        "visible": true,
+        "template": "default",
+        "image": "",
+        "order": 1
+    },
+    "model": "pages.page",
+    "pk": 10
+},
+{
+    "fields": {
+        "picture": "",
+        "subtitle": "",
+        "texte": "<p>Design et d&eacute;veloppement <a href=\"http://accentgrave.net\">Julien Bidoret &mdash; accentgrave</a></p>",
+        "section": 4,
+        "title": "Cr\u00e9dits",
+        "visible": true,
+        "template": "default",
+        "image": "",
+        "order": 2
+    },
+    "model": "pages.page",
+    "pk": 11
+}
+]
