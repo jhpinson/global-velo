@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="50px" height="300px" viewBox="0 0 50 300" enable-background="new 0 0 50 300" xml:space="preserve">
+<circle fill="#FFFFFF" cx="24.858" cy="75" r="19.2"/>
+<circle fill="#FFFFFF" cx="25.142" cy="175" r="19.2"/>
+<circle fill="#FFFFFF" cx="25" cy="275" r="19.2"/>
+<polyline fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	21.609,14.503 32.107,25 21.609,35.497 "/>
+<polyline fill="none" stroke="#A9C944" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	21.609,64.503 32.107,75 21.609,85.497 "/>
+<polyline fill="none" stroke="#A9C944" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	29.391,185.497 18.893,175 29.391,164.503 "/>
+<polyline fill="none" stroke="#484848" stroke-width="1.458" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	33.503,272.752 25,281.256 16.497,272.752 "/>
+<polyline fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	29.391,135.497 18.893,125 29.391,114.503 "/>
+<g>
+	<path fill="#FFFFFF" d="M33,220c0,0.828-0.672,1.5-1.5,1.5h-13c-0.828,0-1.5-0.672-1.5-1.5l0,0c0-0.828,0.672-1.5,1.5-1.5h13
+		C32.328,218.5,33,219.172,33,220L33,220z"/>
+	<path fill="#FFFFFF" d="M33,225c0,0.828-0.672,1.5-1.5,1.5h-13c-0.828,0-1.5-0.672-1.5-1.5l0,0c0-0.828,0.672-1.5,1.5-1.5h13
+		C32.328,223.5,33,224.172,33,225L33,225z"/>
+	<path fill="#FFFFFF" d="M33,230c0,0.828-0.672,1.5-1.5,1.5h-13c-0.828,0-1.5-0.672-1.5-1.5l0,0c0-0.828,0.672-1.5,1.5-1.5h13
+		C32.328,228.5,33,229.172,33,230L33,230z"/>
+</g>
+</svg>

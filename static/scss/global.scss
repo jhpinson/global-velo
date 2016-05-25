@@ -1,0 +1,810 @@
+@import "compass/css3";
+@import "owl.scss";
+
+$green:#A9C944;
+$dark:#232325;
+
+body, html {height: 100%}
+
+body {
+    background:#e5e5e5;
+    }
+html,
+body,
+input,
+textarea,
+button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    }
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    overflow: auto;
+}
+
+h4 {
+    font-size: 1em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+/* --------------------------------------------------------------- HEADER + NAV */
+#header { 
+    background: $dark;
+    
+    background: -moz-linear-gradient(270deg, #3B3B3B 0%, $dark 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3B3B3B), color-stop(100%, $dark)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(270deg, #3B3B3B 0%, $dark 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(270deg, #3B3B3B 0%, $dark 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(270deg, #3B3B3B 0%, $dark 100%); /* ie10+ */
+    background: linear-gradient(180deg, #3B3B3B 0%, $dark 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B3B3B', endColorstr='$dark',GradientType=0 ); /* ie6-9 */
+    
+    border-bottom: 1px solid rgba(0,0,0,.5);
+    position: relative;
+
+    width: 100%;
+
+    color:white;
+    
+    z-index: 200;
+    height: 110px;
+    @include transition( all 250ms);
+    
+    #menu_toggle { 
+        display: none;
+        background: url(img/prevnext.svg) no-repeat 0 -200px;
+        height: 50px;
+        overflow: hidden;
+        position: absolute;
+        right: 30px;
+        text-indent: 999px;
+        top: 30px;
+        white-space: nowrap;
+        width: 50px;
+    }
+
+    nav {
+        float: right;
+        text-transform: uppercase; 
+        letter-spacing: 0.1em;
+        a { color:white; text-decoration: none}
+        a:hover { border-bottom: 2px solid}
+        ul { margin-top: 0;}
+        }
+
+    li { 
+        @include transition( all 250ms);
+        display: inline-block; 
+        margin: 0 0 0 2em;
+        line-height: 110px;
+        &:first-child{ margin-left: 0;}
+        }
+    
+    h1 { margin: 0}
+    #logo { 
+        @include transition( all 250ms);
+        float: left;
+        background: url(img/logo-gv-white-on-black.svg) no-repeat;
+        background-size: auto 100%;
+        height: 110px;
+        width:180px;
+        text-indent: 300px;
+        overflow: hidden;
+        white-space: nowrap;
+        }    
+    // &.sticking{
+
+        
+    //     height: 80px;
+    //     li {line-height: 80px;}
+    //     #logo { height: 80px;}
+    //     }
+    }
+.velos #li-velos a,
+.locations #li-location a,
+.shop #li-shop a { border-bottom: 2px solid}
+
+/* --------------------------------------------------------------- MAIN */
+
+main {
+    min-height: calc(100% - 110px); 
+    overflow: hidden;
+    position: relative; 
+}
+#header.is_stuck ~ main { min-height: calc(100% - 80px); }
+
+
+/* --------------------------------------------------------------- HOME  */
+
+
+/* --------------------------------------------------------------- SLIDES  */
+
+
+#slideshow {
+    height: 400px;
+    background-color: $dark; 
+    .owl-carousel,
+    .owl-stage-outer, .owl-stage {
+        position: absolute;
+        left:0; right:0;
+        bottom: 0; top:0;
+        }
+    
+    .owl-item { height: 100%}
+
+    &.loading {
+        @extend .preloading;
+        }
+
+    }
+
+.home #slideshow { height: calc(100vh - 110px); }
+
+
+.slide {
+    background-color: $dark; 
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;     
+    > a, > span { 
+        color:white;
+        text-decoration: none;
+        position: absolute;
+        @include flexbox((
+            display: flex,
+            flex-direction: column,
+            flex-align: center,        
+            align-items: center,
+            justify-content: center
+        
+            ));
+        left:0; right:0;
+        bottom: 0; top:0;
+        z-index: 3;
+    }
+    h1, h2 { 
+        text-transform: uppercase; 
+        font-size: calc(20px + 3vw); 
+        line-height: 1.2; 
+        margin: 0;
+        text-shadow: 0px .05em .15em rgba(0,0,0,.8);
+        //@include transition(all 250ms ease-out);
+        -webkit-transition: all 250ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+           -moz-transition: all 250ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+             -o-transition: all 250ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transition: all 250ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+        opacity: 0;
+        }
+        h1 { @include transform( translateX(-80px) )}
+        h2 { @include transform( translateX(80px) )}
+        h2.long{
+            font-size: 26px;
+        }
+    .title {
+        display: block;
+        margin: 0 0 1.5em
+    }
+    .description {
+        background: #fff;
+        color: #000;
+        border-radius: 3px;
+        padding: .5em 1.25em .5em;
+    }
+}
+
+.splash.active,
+.owl-item.active .slide {
+    h1, h2 { @include transform( translateX(0) ); opacity: 1;}
+    
+    }
+
+
+
+
+#dot {
+    position: absolute;
+    left: 50%;
+    bottom: -75px;
+    margin-left: -25px;
+    height: 50px;
+    width: 50px;
+    z-index: 200;
+    opacity: 1;
+    background: url(img/prevnext.svg) no-repeat center -250px; 
+    @include transition(all 600ms ease-out 1000ms);    
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+       -moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+         -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+}    
+#dot.landed{
+    bottom: 15px;
+}
+#dot.hidden{
+    bottom: 45px;
+    opacity: 0
+}
+
+/* --------------------------------------------------------------- HOME NAVBOX */
+.home .navbox {
+    position: relative;
+    z-index: 4;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.home .navbox {
+    
+    max-width: 1600px;
+    padding: 0 50px;
+    list-style: none;
+
+    @include flexbox((
+        display: flex,
+        flex-direction: row,
+        flex-align: center
+        ));
+
+    li {
+        flex:1;
+        margin: 0 0 0 40px;
+        &:first-child{margin-left: 0;}
+        }
+
+        #box-magasin a{ background-image: url("img/location-de-velo-nay.jpg"); }
+        #box-locations a{ background-image: url("img/vtc-famille.jpg"); }
+        #box-velos a{ background-image: url("img/wood.jpg"); }
+    
+    a {
+        display: block;
+        height: 250px;
+        background-color: black;
+        padding: 1em;
+        text-align: center;
+        position: relative;
+        background-position: center center;
+        background-size:cover;
+        
+        &:before {
+            -moz-box-shadow: inset 0 0 2vw rgba(0,0,0,.4);
+            -webkit-box-shadow: inset 0 0 2vw rgba(0,0,0,.4);
+            box-shadow: inset 0 0 2vw rgba(0,0,0,.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            content: "";
+            }
+    }
+            
+
+    span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        display: block;
+        padding: 0.5em 2em 1em ;
+        text-decoration: none;        
+        @include transition( background 250ms);
+        }
+        a:hover span { background: rgba(0, 0, 0, 0.6);  }
+
+    strong{
+        display: block;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+    }
+    
+}
+
+
+
+/* --------------------------------------------------------------- PAGES  */
+#map, .splash{
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center 60%;
+    background-repeat: no-repeat;
+    background-color: #303030;
+    }
+
+main.page {
+    position: relative;
+    overflow: auto;
+    }
+
+.subnav {
+    width: 250px; 
+    border-right: 1px solid #ccc;
+    padding-right: 50px;
+    margin-right: 50px;
+    position: absolute;
+    margin-top: 50px;
+    a {
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 1em;
+    }
+}
+.page section{
+    float: left;
+    margin: 0 0 0px 300px;
+}
+.page article {
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+.page article h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+}
+
+.page article h2 {
+    background: $green;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 1.5em;
+    }
+
+
+.page article h3 {
+    margin-bottom: 0;
+    }
+
+
+/* --------------------------------------------------------------- BIKES */
+
+#filtres { 
+    text-align: center;
+    list-style-type: none; 
+    margin: 0 ;
+    padding: 2em;
+    li { display: inline-block; margin: 0 1em; position: relative;}
+    .sep { color: #ccc}
+    a { text-decoration: none; text-transform: uppercase; display: inline-block; line-height: 1.2; margin-bottom: .5em;}
+    a:hover,.selected { border-bottom: 2px solid}
+}
+
+.sub {
+    > a {
+        &:after { 
+            border-color: black transparent transparent;
+            border-style: solid;
+            border-width: 6px 5px 0;
+            content: " ";
+            display: block;
+            float: right;
+            height: 0;
+            margin: 7px 0 0 10px;
+            transform: rotate(360deg);
+            width: 0;
+            }
+        }
+    > ul {
+        display: none;
+        background: #e7e7e7 none repeat scroll 0 0;
+        border-radius: 3px;
+        left: -1em;
+        right: -1em;
+        margin: 0;
+        padding: 0 1em 1em;
+        position: absolute;
+        z-index: 200;
+        text-align: left;
+        top: 1.2em;
+        :first-child{ padding-top: .5em}
+        }
+    &:hover > ul{
+        display: block;
+        }
+    }
+#filtres .sub li {
+    margin: 0;
+    display: block;
+}
+
+
+/* --------------------------------------------------------------- Preload */
+
+.loader { 
+    position: absolute; 
+    left:-250px; width: 50px; height: 50px; overflow: hidden;
+}
+.preloading {
+    &:after{
+        content: "";
+        z-index: 300;
+        position: absolute;
+        left:0; right:0;
+        bottom: 0; top:0;
+        background: #cfcfcf;
+        }
+    
+    .loader {
+        position: absolute;
+        top:50%;
+        left:50%;
+        margin: -25px 0 0 -25px;
+        z-index: 9999;
+        }
+    .circular {
+        animation: rotate 2s linear infinite;
+        height: 100%;
+        transform-origin: center center;
+        width: 100%;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+        }
+    .path {
+        stroke-dasharray: 1,200;
+        stroke-dashoffset: 0;
+        animation: 
+            dash 1.5s ease-in-out infinite,
+            color 3s ease-in-out infinite ;
+        stroke-linecap: round;
+        }       
+        
+    }
+
+@keyframes rotate{
+    100% { transform: rotate(360deg); }
+    }
+
+@keyframes dash{
+    0%{
+        stroke-dasharray: 1,200;
+        stroke-dashoffset: 0;
+        }
+    50%{
+        stroke-dasharray: 89,200;
+        stroke-dashoffset: -35px;
+        }
+    100%{
+        stroke-dasharray: 89,200;
+        stroke-dashoffset: -124px;
+        }
+    }
+
+@keyframes color{
+    100%, 0%{ stroke: #000; }
+    50%{ stroke: #A9C944; }
+    }
+
+
+/* --------------------------------------------------------------- BIKES */
+
+#bikes {
+    background: #cfcfcf;
+    padding: 50px 100px;
+    position: relative;
+    &.loading {
+        @extend .preloading;
+        }
+    
+    }
+
+
+#bikes .owl-carousel .owl-stage-outer { margin-right: -50px; }
+#bikes .owl-nav div {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    white-space: nowrap;
+    margin-top: -25px;
+    display: block !important;
+    background: url(img/prevnext.svg) no-repeat;
+    text-indent: 50px;
+    overflow: hidden;
+    &.owl-prev { left:-75px; background-position: 0 -100px;  &:hover{ background-position: 0 -150px;}}
+    &.owl-next { right:-75px;  background-position: 0 0; &:hover{ background-position: 0 -50px;}}
+}
+
+.bike {
+    float: left;
+    // margin: 0 50px 50px 0;    
+    padding: 25px;
+    background: white;
+    position: relative;
+    h1 { font-size: 1.25em; margin: .5em 0; text-transform: uppercase; text-align: center; }
+    a { text-decoration: none;}
+    .text {
+        font-size: .85em;
+        line-height: 1.5;
+        max-height: 6em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient : vertical;
+        -webkit-line-clamp: 4;
+        h2 ,h3, h4, p, ul, ol { display: inline; font-size: 1em;}
+    }
+    .price {
+        font-size: 1em;
+        font-weight: bold;
+        position: absolute;
+        top:15px;
+        right: -15px;
+        background: $green;
+        color: white;
+        padding: 1em
+    }
+}
+
+
+
+#bikes.alt .bike{
+    img { width: 70%; max-width: 900px; min-width: 400px; display: block; margin: 0 auto 2em}
+    p {}
+    h1 {
+        font-size: 2.25em;
+        margin: 0;
+        padding-right: 12px;
+        text-align: right;
+        text-transform: uppercase;
+
+        }
+    div {
+        float: left;
+        font-size: 1em;
+        line-height: 1.6;
+        width: 50%;
+    }
+    .price{
+        position: static;
+        float: right;
+        clear: both;
+        margin-right:12px;
+    }
+    .text { padding-left: 13px; margin-top: 0.75em; font-size: 1em; }
+    p {font-size: 1em; }
+}    
+
+
+.andmore {
+    align-items: center;
+    background: #a9c944 none repeat scroll 0 0;
+    a {color: white;}
+    display: flex;
+    font-size: 1.5em;
+    height: 320px;
+    padding: 1.5em;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* --------------------------------------------------------------- MAGASIN */
+
+#partners {
+    overflow: auto;
+}
+#partners a{
+    display: block;
+    float: left;
+    width:25%;
+    padding-right: 50px;
+    strong { 
+        position: absolute;
+        left: -999px;;
+        width:1px; height: 1px; overflow: hidden;
+    }
+    &:hover img {
+      -webkit-filter: grayscale(0%);
+      -webkit-transition: .250ms ease-in-out;
+      -moz-filter: grayscale(0%);
+      -moz-transition: .250ms ease-in-out;
+      -o-filter: grayscale(0%);
+      -o-transition: .250ms ease-in-out;
+      filter: grayscale(0%);
+    } 
+
+    img {
+      -webkit-filter: grayscale(100%);
+      -webkit-transition: .250ms ease-in-out;
+      -moz-filter: grayscale(100%); 
+      -moz-transition: .250ms ease-in-out;
+      -o-filter: grayscale(100%); 
+      -o-transition: .250ms ease-in-out;
+      filter: grayscale(100%);
+    }
+}
+
+.leaflet-compact-attribution { display: none}
+
+/* --------------------------------------------------------------- LOCATIONS */
+
+#locations-splash{
+    background-image: url(img/WP_20150816_001.jpg);
+}
+
+/* --------------------------------------------------------------- VENTE */
+
+#velos-splash{
+    background-image: url(img/hm_ktm_action_2016_107.jpg);
+}
+/* --------------------------------------------------------------- SHOP */
+
+#shop-splash span{
+    pointer-events:none;
+}
+
+/* --------------------------------------------------------------- FORMS */
+form {
+    input[type=text],
+    input[type=email],
+    textarea {
+        border: none;
+        border-radius: 3px;
+        background: white;
+        padding: .5em 1.2em;
+        width: 100%;
+        line-height: 1.5;
+        margin: 0
+    }
+    .form-group{
+        position: relative;
+        margin: 1.5em 0;
+    }
+    .help-block, .help-block-error,
+    p { color: #666; font-weight: 400}
+    label { 
+        color: #666;
+        display: block;
+        float: left;
+        margin: 0;
+        width: 20%;
+        padding: .5em 0;
+        }
+    .controls,
+    .help-block, .help-block-error,
+    .buttonHolder {
+        margin-left: 25%;
+        p { margin-left: 0;}
+        }
+    button,
+    input[type=submit] {
+        padding: .5em 1.2em;
+        border-radius: 3px;
+        background: $green;
+        color: white;
+        border: none;
+        text-transform: uppercase;
+    }
+
+    
+}
+
+/* --------------------------------------------------------------- FOOTER */
+footer {
+    background: $dark;
+    color: #777;
+    margin-top: 50px;
+    padding: 50px 0;
+    
+
+    a { color: #888; &:hover {color: $green; } }
+    p, h2 {line-height: 1.6;}
+    h2 {
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em
+    }
+    p + h2 { margin-top: 2em; }
+    > div {
+        @include flexbox((
+            display: flex,
+            flex-direction: row,
+            flex-align: center
+            ));
+
+        > div {
+            flex:1;
+            margin: 0 0 0 40px;
+            &:first-child{margin-left: 0;}
+        }
+        .about img {
+            display: block;
+            margin-bottom: 2em;
+        }
+    }
+}
+
+
+
+@media (max-width: 850px){
+    .subnav {
+        width: auto !important; 
+        border-right: none;
+        padding-right: 0;
+        margin-right: 0;
+        position: static !important;
+        margin-top: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+        a {
+            display: inline-block;
+            margin:0 .5em;
+            letter-spacing: 0
+            }
+        }
+
+    .page section{ float: none; margin: 0; }
+    .page article {
+        &:first-child{ padding-top: 20px}
+        padding-top: 50px;
+        margin-bottom: 10px;
+        }
+       
+    }
+
+@media (max-width: 650px){
+
+
+    #header #menu_toggle { display: block;}
+
+    footer > div { @include flexbox((flex-direction: column)); text-align: center;}
+    footer > div > div { margin: 0 0 40px 0; }
+    footer > div .about img { margin: 0 auto 2em; }
+    #partners a { width: 50%}
+
+    #header #logo { margin: 0 auto; display: block; float: none;}
+    #header nav ul { display: none;} 
+    #header nav.visible ul {
+        display: block;
+        background: $dark;
+        left: 0;
+        margin-top: 0;
+        position: absolute;
+        text-align: center;
+        top: 110px;
+        width: 100%;
+        padding: 2.5em 0 2em; 
+        li {line-height: 1.5;}
+        }
+    }    
+
+@media (max-width: 500px){
+    
+    .page article h1 { text-align: center; }
+    form label { float: none; width: auto  }
+    form .controls, form .buttonHolder { margin-left: 0;}
+
+    #bikes { padding: 20px 50px}
+    #bikes { padding: 0}
+    #bikes .owl-nav div { position: static; margin-top: 0;}
+    #bikes .owl-nav div.owl-prev { float: left; margin-left: 20px;}
+    #bikes .owl-nav div.owl-next { float: right; margin-right: 20px;}
+    #bikes .owl-nav { overflow: hidden; }
+    #bikes .owl-carousel .owl-stage-outer { margin-right: 0;}
+    .bike .price { right: 15px}
+    #header li { display: block; margin: 0 0 .5em;}
+    
+}
+
+@media (max-width: 360px){
+    .wrapper { padding: 0 20px}
+    #header #logo { 
+        background-position: 0 center;
+        background-size: 100% auto;
+        width: 120px;
+        }
+}
