@@ -2,3 +2,6 @@
 .pydevproject
 *.pyc
 *.mo
+static/.sass-cache
+global-velo.sublime-project
+global-velo.sublime-workspace
