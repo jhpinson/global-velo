@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block meta %}
+    <title>Global Vélo – locations de vélos pour vos balades autour de Nay, Pau, Lourdes ou Tarbes.</title>
+    <meta property="og:title" content="Global Vélo" />
+    <meta property="og:locale" content="{{ LOCALE }}" />
+    <meta property="og:site_name" content="Global Vélo" />
+    <meta property="og:url" content="{{ DOMAIN }}" />
+    <meta property="og:description" content="Locations de vélos pour vos balades autour de Nay, Pau, Lourdes ou Tarbes.">
+    <meta name="description" content="Locations de vélos pour vos balades autour de Nay, Pau, Lourdes ou Tarbes.">
+{% endblock meta %}
+
+
+{% block bodyclass %}page{% endblock bodyclass %}
+
+{% load staticfiles utils crispy_forms_tags thumbnail %}
+
+{% block content %}
+        
+
+        <main class="page">
+
+            <div class="wrapper">
+                <nav class="subnav">
+                    {% for page in pages %}
+                        <a href="#{{ page.title|slugify }}">{{ page.title }}</a>
+                    {% endfor %}                    
+                </nav>    
+                <section>
+                                
+                {% for page in pages %}
+                    <article id="{{ page.title|slugify }}">
+                    
+                        {% if page.picture %}
+                        <img src="{{MEDIA_URL}}{{ page.picture }}" >
+                        {% thumbnail page.picture "100x100" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <h1>{{ page.title }}</h1>
+                        {{ page.subtitle|verbose:"<h2>%s</h2>" }}
+                        <div class="text">
+                            {{ page.texte|safe }}
+                        </div>
+                    
+                    </article>
+                {% endfor %}
+
+                </section>
+            </div>
+                   
+        </main>
+      
+    
+{% endblock content %}
+
+{% block javascripts %}
+    {{ block.super }}
+    
+{% endblock javascripts %}

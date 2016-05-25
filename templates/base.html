@@ -1,1 +1,122 @@
-{% extends 'base-open.html' %}
+<!doctype html>
+<html class="no-js" lang="fr">
+    <head>
+        {% load i18n staticfiles pipeline utils %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        {% block meta %}
+            <title>Global Vélo – location, vente et réparation de vélos à Nay</title>
+            <meta property="og:title" content="Global Vélo – location, vente et réparation de vélos à Nay" />
+            <meta property="og:locale" content="{{ LOCALE }}" />
+            <meta property="og:site_name" content="Global Vélo" />
+            <meta property="og:url" content="{{ DOMAIN }}" />
+            <meta property="og:description" content="Global Vélo vous accueille dans sa boutique à Nay pour répondre vos envies de sorties au grand air sur deux roues. Venez découvrir nos vélos en location et à vendre, neufs ou d’occasion.">
+            <meta name="description" content="Global Vélo vous accueille dans sa boutique à Nay pour répondre vos envies de sorties au grand air sur deux roues. Venez découvrir nos vélos en location et à vendre, neufs ou d’occasion.">
+        {% endblock meta %}
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+        {# <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" /> #}
+        {% stylesheet "main" %}
+
+        <!--[if (lt IE 9) & (!IEMobile)]>
+            <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body class="{% block bodyclass %}{% endblock bodyclass %}">
+    
+
+        <header id="header">
+            <div class="wrapper">
+            <h1><a href="/" id="logo">Global Vélo</a></h1>
+            <nav>
+                <div id="menu_toggle">Menu</div>
+                <ul class="unstyled">
+                    <li id="li-shop"><a href="{% url 'shop-contact' %}">Le magasin</a></li>
+                    <li id="li-location"><a href="{% url 'bike-rental' %}">Location</a></li>
+                    <li id="li-velos"><a href="{% url 'bike-sell' %}">Les vélos</a></li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+    
+        {% block content %}{% endblock %}
+        
+
+        <footer>
+            <div class="wrapper">
+                <div class="about">
+                    <a href="http://globalvelo.pro">
+                        <img src="{{ STATIC_URL }}img/global-velo-footer.svg">
+                    </a>
+                    <p>
+                        ©2016 SAS Global Vélo<br> Tous droits réservés.<br>
+                        <a href="{% url 'mentions' %}">Mentions légales</a>
+                    </p>     
+                    
+                </div>
+                <div class="contact">
+                    <h2>Contactez-nous</h2>
+                    <p itemscope itemtype="http://schema.org/LocalBusiness">
+                        <span itemprop="name">SAS Global Vélo</span><br>
+                        <span itemprop="address">
+                            <span itemprop="streetAddress">16 rue Clémenceau</span><br>
+                            <span itemprop="postalCode">64800</span>
+                            <span itemprop="addressLocality">Nay, France</span><br>
+                        </span>
+                        <span itemprop="openingHours" content="Tu,Sa 09:00-12:00">Ouvert du mardi au samedi, <br>de 9h à 12h</span> et <span itemprop="openingHours" content="Tu,Sa 15:00-19:00">de 15h à 19h <br>
+                        <span itemprop="telephone"><a href="tel:+33559322785">+33 (0)5 59 32 27 85</a></span>
+                    </p>
+                    <p>
+                        Écrivez-nous un <a href="mailto:sas.globalvelo@gmail.com"> e-mail</a>.<br>Ou envoyez-nous <a href="{% url 'shop-contact' %}#contactez-nous"> un message</a>.
+                    </p>
+                    <p>Et… <a href="https://www.facebook.com/globalvelo">suivez-nous sur facebook !</a></p>
+                </div>
+                <div>
+                    <div class="fb-page" id="fb-page" data-height="300" data-href="https://www.facebook.com/globalvelo/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/globalvelo/"><a href="https://www.facebook.com/globalvelo/">Global Vélo</a></blockquote></div></div>
+                </div>
+            </div>
+        </footer>
+        
+        
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        
+        {% block lazy-js %}
+            {% javascript "lazy" %}
+        {% endblock %}
+        {% block javascripts %}
+            
+        {% endblock javascripts %}
+        
+            <script type="text/javascript">
+        document.getQueryselector('#fb-page').style.width = window.innerWidth - 80 /
+        </script>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.6&appId=648390501888401";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your like button code -->
+        {% comment %}{% endcomment %}
+        
+
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-61048724-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>

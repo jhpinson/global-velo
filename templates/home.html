@@ -1,128 +1,63 @@
 {% extends "base.html" %}
-{% load i18n staticfiles %}
+
+{% block bodyclass %}home{% endblock bodyclass %}
+
+{% load staticfiles utils %}
 
 {% block content %}
 
-    <section class="slider slider-home bg1 with-trame">
-        <div class="container">
-            <div class="slide-box">
-                <h1 style="font-size: 30px;  margin-bottom: 10px;">Location, vente et réparation <br>de votre vélo à Nay
-                </h1>
+        <main>
+            <div id="slideshow" class="loading">      
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                </svg>
+            </div>         
+            <div class="owl-carousel">
+            {% for slide in slides  %}
+                <div class="slide" id="slide-{{ slide.id }}" style="background-image: url({{ MEDIA_URL }}/{{ slide.picture }})">
+                    <a href="{{ slide.url }}">
+                        <div>
+                            <span class="title">
+                            <h1>{{ slide.title }}</h1>
+                            <h2 {% if slide.subtitle|length > 25 %} class="long"{% endif %}>{{ slide.subtitle }}</h2>
+                            </span>
 
-                <h2>Envie d’évasion pour ce week-end ?</h2><a class="btn btn-primary btn-big">LOUEZ UN VTT</a>
-            </div>
-            <div class="btns-switch">
-                <a class="btn btn-switch btn-switch-velo" data-switch-target="box-bike"
-                   data-switch-active>{% trans "Louer" %}</a>
-                <a class="btn btn-switch btn-secondary btn-switch-box"
-                   data-switch-target="box-workshop">{% trans "Réparer" %}</a>
-            </div>
-        </div>
-    </section>
-    <section class="home-boxes">
-        <div class="container">
-            <div class="row eqh">
-
-
-                <div class="col-sm-4">
-
-                    <div class="box-card-container">
-
-                        <div class="box box-card" id="box-workshop" data-switch-item>
-                            <header class="box-header box-box">
-                                <h2 class="box-title">Louer un box de réparation</h2>
-                            </header>
-                            <div class="content">
-                                <form id="" method="GET" action="{% url 'workshop-box-rental' %}">
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-xs-4 text-right">
-                                                <label>Location du :</label>
-                                            </div>
-                                            <div class="col-xs-8">
-                                                <input type="text" class="calendrier">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-xs-4 text-right">
-                                                <label>au :</label>
-                                            </div>
-                                            <div class="col-xs-8">
-                                                <input type="text" class="calendrier">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-block">C'est parti !</button>
-                                </form>
-                            </div>
+                            {{ slide.description|verbose:'<span class="description">%s</span>'|safe }}
                         </div>
-
-                        <div class="box box-card" id="box-bike" data-switch-item>
-                            <header class="box-header box-velo">
-                                <h2 class="box-title">Louer un vélo</h2>
-                            </header>
-                            <div class="content">
-                                <form id="" method="GET" action="{% url 'bike-rental' %}">
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-xs-4 text-right">
-                                                <label>Location du :</label>
-                                            </div>
-                                            <div class="col-xs-8">
-                                                <input type="text" class="calendrier">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-xs-4 text-right">
-                                                <label>au :</label>
-                                            </div>
-                                            <div class="col-xs-8">
-                                                <input type="text" class="calendrier">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-block">C'est parti !</button>
-                                </form>
-                            </div>
-                        </div>
-
-
-                    </div>
+                    </a>
                 </div>
-
-
-                <div class="col-sm-4">
-                    <div class="box">
-                        <img src="{% static 'img/box-info-bg.jpg' %}" alt="">
-                        <footer class="box-footer"><a href="#">venez découvrir notre gamme de vélo</a></footer>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="box box-invert">
-                        <header class="box-header">
-                            <h2 class="box-title">Votre météo ce week-end</h2>
-                        </header>
-                        <div class="content">
-                            <div class="row text-center">
-                                <div class="col-6">
-                                    <h4>Samedi</h4><img src="{% static 'img/1.png' %}" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <h4>Dimanche</h4><img src="{% static 'img/1.png' %}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {% endfor %}
             </div>
+            </div>     
+            <div id="dot"></div>       
+        </main>
 
-
-        </div>
-    </section>
-
-{% endblock %}
+        <ul class=" navbox">
+            <li id="box-magasin">
+                <a href="{% url 'shop-contact' %}">
+                    <span>
+                        <strong>Le magasin</strong>
+                        À Nay, un professionel à votre service
+                    </span>
+                </a>
+            </li>
+            <li id="box-locations">
+                <a href="{% url 'bike-rental' %}">
+                    <span>
+                        <strong>Location</strong>
+                        Découvrez nos offres et évadez-vous
+                    </span>
+                </a>
+            </li>
+            <li id="box-velos">
+                <a href="{% url 'bike-sell' %}">
+                    <span>
+                        <strong>Les vélos</strong>
+                        Neuf ou d’occasion, votre vélo vous attend
+                    </span>
+                </a>
+            </li>
+        </ul>
+    
+{% endblock content %}

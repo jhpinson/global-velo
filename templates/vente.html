@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% block meta %}
+    <title>Global Vélo – locations de vélos pour vos balades autour de Nay, Pau, Lourdes ou Tarbes.</title>
+    <meta property="og:title" content="Global Vélo – locations de vélos pour vos balades autour de Nay, Pau, Lourdes ou Tarbes." />
+    <meta property="og:locale" content="{{ LOCALE }}" />
+    <meta property="og:site_name" content="Global Vélo" />
+    <meta property="og:url" content="{{ DOMAIN }}" />
+    <meta property="og:description" content="Envie d’évasion ? Global Vélo vous attend dans sa boutique à Nay pour vous faire découvrir nos vélos en location pour les sportifs comme pour les familles.">
+    <meta name="description" content="Envie d’évasion ? Global Vélo vous attend dans sa boutique à Nay pour vous faire découvrir nos vélos en location pour les sportifs comme pour les familles.">
+{% endblock meta %}
+
+
+{% block bodyclass %}velos{% endblock bodyclass %}
+
+{% load staticfiles utils crispy_forms_tags thumbnail %}
+
+{% block content %}
+        
+        
+
+        
+
+        <main class="page">
+            <div id="velos-splash" class="splash slide">
+                <span>
+                    <span class="title">
+                        <h1>Nos</h1>
+                        <h2>Vélos</h2>
+                    </span>
+                </span>
+            </div>
+            
+            <ul id="filtres">
+                <li><a href="#" class="selected" data-filter="*">Tous</a></li>
+                <li><a href="#" data-filter=".man">Homme</a></li>
+                <li><a href="#" data-filter=".woman">Femme</a></li>
+                <li><a href="#" data-filter=".child">Enfant</a></li>   
+                <li class="sep">|</li>
+                <li class="sub">
+                    <a href="#">Marque</a>
+                    <ul>
+                        <li><a href="#" data-filter=".ktm">KTM</a></li>
+                        <li><a href="#" data-filter=".bbb">BBB</a></li>
+                        <li><a href="#" data-filter=".bh">BH</a></li>   
+                        <li><a href="#" data-filter=".montana">Montana</a></li>   
+                    </ul>
+                </li>
+                <li class="sep">|</li>
+                <li class="sub">
+                    <a href="#">Style</a>
+                    <ul>
+                    <li><a href="#" data-filter=".vtt">VTT</a></li>
+                    <li><a href="#" data-filter=".vtc">VTC</a></li>
+                    <li><a href="#" data-filter=".route">Route</a></li>   
+                    <li><a href="#" data-filter=".vae">E.bike</a></li>   
+                    </ul>
+                </li>
+                <li class="sep">|</li>
+                <li><a href="#" data-filter=".neuf">Neuf</a></li>
+                <li><a href="#" data-filter=".occasion">Occasion</a></li>
+            </ul>
+
+            <div id="bikes" class="loading alt">
+                <div class="loader">
+                    <svg class="circular" viewBox="25 25 50 50">
+                        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                    </svg>
+                </div>
+                
+                <div class="owl-carousel">
+                {% for bike in bikes  %}
+                    <div class="
+                        bike 
+                        {{ bike.gender }} 
+                        {{ bike.brand|slugify }}
+                        {% for category in bike.categories.all %} {{ category.short_label }} {% endfor %}
+                        {% if bike.second_hand %} occasion{% else %}neuf {% endif %}">
+                        <a href="#">
+                            <img src="{{MEDIA_URL}}{{ bike.picture }}" >
+                            <div class="title">
+                                <h1>{{ bike.label }}</h1>
+                                <span class="price">{{ bike.price }} €</span>
+                            </div>
+                            <div class="text">
+                                {{ bike.brand }} — 
+                                {{ bike.description|safe }}                                
+                            </div>                            
+                        </a>
+                    </div>
+                    {% if forloop.last %}
+                    <div class="bike andmore" id="andmore">
+                        <a href="{% url 'shop-contact' %}">&amp; bien plus au magasin !</a>
+                    </div>
+                        
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="wrapper">
+                <nav class="subnav">
+                    {% for page in pages %}
+                        <a href="#{{ page.title|slugify }}">{{ page.title }}</a>
+                    {% endfor %}
+                </nav>    
+                <section>
+                    
+                {% for page in pages %}
+                    <article id="{{ page.title|slugify }}">
+                    {% if page.template ==  "contacts" %}
+                        <h1>{{ page.title }}</h1>
+                        {{ page.subtitle|verbose:"<h2>%s</h2>"|safe }}
+                        <div class="text">
+                            {{ page.texte|safe }}
+                        </div>
+                        <form data-ajax-uri="{% url 'shop-contact-ajax' %}" action="{% url 'shop-contact' %}" method="POST">
+                            <div class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
+                                Votre message a été envoyé !
+                            </div>
+
+                            {% crispy form %}
+
+                            <div class="buttonHolder right">
+                                <input type="submit" class="btn btn-primary " value="Envoyer">
+                            </div>
+                        </form>
+
+                    {% elif page.template == "partners" %}
+                        <h1>{{ page.title }}</h1>
+                        {{ page.subtitle|verbose:"<h2>%s</h2>"|safe }}
+                        <div class="text">
+                            {{ page.texte|safe }}
+                        </div>
+                        <div id="partners">
+                            {% for partner in partners  %}
+                                <a href="{{ partner.url }}">
+                                {% thumbnail partner.picture '200' as im %}
+                                 <div class="col-sm-6 col-3">
+                                    <img src="{{ im.url }}" alt="{{ partner.name }}" width="{{ im.width }}" height="{{ im.height }}">
+                                 </div>
+                                 {% endthumbnail %}
+                                {% thumbnail partner.picture "100x100" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                {% endthumbnail %}
+                                    {{ partner.picture.url|verbose:'<img src="%s">'|safe }}
+                                    <strong>{{ partner.name }}</strong>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {% if page.picture %}
+                        <img src="{{MEDIA_URL}}{{ page.picture }}" >
+                        {% thumbnail page.picture "100x100" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                        {% endif %}
+                        <h1>{{ page.title }}</h1>
+                        {{ page.subtitle|verbose:"<h2>%s</h2>"|safe }}
+                        <div class="text">
+                            {{ page.texte|safe }}
+                        </div>
+                    {% endif %}
+                    </article>
+                {% endfor %}
+                </section>
+            </div>
+                   
+        </main>
+      
+    
+{% endblock content %}
+
+{% block javascripts %}
+    {{ block.super }}
+    
+{% endblock javascripts %}

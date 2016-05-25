@@ -1,73 +1,161 @@
 {% extends "base.html" %}
-{% load i18n crispy_forms_tags %}
+{% block meta %}
+    <title>Global Vélo – location, vente et réparation de vélos à Nay</title>
+    <meta property="og:title" content="Global Vélo – location, vente et réparation de vélos à Nay" />
+    <meta property="og:locale" content="{{ LOCALE }}" />
+    <meta property="og:site_name" content="Global Vélo" />
+    <meta property="og:url" content="{{ DOMAIN }}" />
+    <meta property="og:description" content="Global Vélo vous accueille dans sa boutique à Nay pour répondre vos envies de sorties au grand air sur deux roues. Venez découvrir nos vélos en location et à vendre, neufs ou d’occasion.">
+    <meta name="description" content="Global Vélo vous accueille dans sa boutique à Nay pour répondre vos envies de sorties au grand air sur deux roues. Venez découvrir nos vélos en location et à vendre, neufs ou d’occasion.">
+{% endblock meta %}
 
-{% block meta-title %} - Nous contacter{% endblock %}
-{% block meta-description %}Vous trouverez ici touts les informations pour nous contacter.{% endblock %}
+
+{% block bodyclass %}shop{% endblock bodyclass %}
+
+{% load staticfiles utils crispy_forms_tags thumbnail %}
 
 {% block content %}
+        
+        
 
+        
 
-    <div class="slider bg with-trame"> </div>
-    <section class="site-content with-background">
-      <div class="container">
-        <div class="page">
-          <header class="page-header">
-            <h1>{% trans "Nous contacter" %}</h1>
-          </header>
-          <div class="page-content">
-            <article class="post post-contact">
-              <div class="row">
-                <div class="col-8">
-                  <form data-ajax-uri="{% url 'shop-contact-ajax' %}" action="{% url 'shop-contact' %}" method="POST">
-                    <div class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
-                        {% trans "Votre message a été envoyé !" %}
-                    </div>
-
-                      {% crispy form %}
-
-                      <div class="buttonHolder right">
-                        <input type="submit" class="btn btn-primary " value="Envoyer">
-                      </div>
-                    </form>
-                </div>
-
-                <div class="col-4" >
-                     <p>
-
-                        <h3>Horaires d'ouvertues</h3>
-                        Du mardi au samedi, 9h - 12h, 15h - 19h
-
-                     </p>
-                     <p itemscope itemtype="http://schema.org/Organization">
-                        <h3>Adresse postale</h3>
-                         <address >
-                            <span itemprop="name">SAS Global Vélo</span>
-                            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                                <span itemprop="streetAddress">16 rue Clémenceau</span><br>
-                                <span itemprop="postalCode">64800</span>
-                                <span itemprop="addressLocality">Nay, France</span>
-                            </div>
-                        </address>
-                        <strong>Téléphone :</strong> <a itemprop="telephone" href="tel:+33559322785">+33 (0)5 59 32 27 85</a> <br>
-                        <br>
-                        <strong >{% trans "Coordonnées GPS" %}</strong>
-                        <div itemtype="http://data-vocabulary.org/Geo">
-                            <span itemprop="latitude" content="43.1788795" >Latitude : 43.1788795</span><br>
-                            <span itemprop="longitude" content="-0.2617652999999791" >Longitude : -0.2617652999999791</span>
+        <main class="page">
+            <div id="shop-splash" class="splash  slide">
+                <div id="map"></div>
+                <span>
+                    <span class="title">
+                        <h1>Global</h1>
+                        <h2>Vélo</h2>
+                    </span>
+                </span>
+            </div>
+            
+            <div class="wrapper">
+                <nav class="subnav">
+                    {% for page in pages %}
+                        <a href="#{{ page.title|slugify }}">{{ page.title }}</a>
+                    {% endfor %}
+                </nav>    
+                <section>
+                {% for page in pages %}
+                    <article id="{{ page.title|slugify }}">
+                    {% if page.template ==  "contacts" %}
+                        <h1>{{ page.title }}</h1>
+                        {{ page.subtitle|verbose:"<h2>%s</h2>" }}
+                        <div class="text">
+                            {{ page.texte|safe }}
                         </div>
+                        <form data-ajax-uri="{% url 'shop-contact-ajax' %}" action="{% url 'shop-contact' %}" method="POST">
+                            <div class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
+                                Votre message a été envoyé !
+                            </div>
 
-                    </p>
-                </div>
+                            {% crispy form %}
 
-              </div>
+                            <div class="buttonHolder right">
+                                <input type="submit" class="btn btn-primary " value="Envoyer">
+                            </div>
+                        </form>
 
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
+                    {% elif page.template == "partners" %}
+                        <h1>{{ page.title }}</h1>
+                        {{ page.subtitle|verbose:"<h2>%s</h2>" }}
+                        <div class="text">
+                            {{ page.texte|safe }}
+                        </div>
+                        <div id="partners">
+                            {% for partner in partners  %}
+                                <a href="{{ partner.website }}">
+                                {% thumbnail partner.picture '200' as im %}
+                                 <div class="col-sm-6 col-3">
+                                    <img src="{{ im.url }}" alt="{{ partner.name }}" width="{{ im.width }}" height="{{ im.height }}">
+                                 </div>
+                                 {% endthumbnail %}
+                                {% thumbnail partner.picture "100x100" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                {% endthumbnail %}
+                                    {{ partner.picture.url|verbose:'<img src="%s">'|safe }}
+                                    <strong>{{ partner.name }}</strong>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    
+                    {% else %}
+                        {% if page.picture %}
+                        <img src="{{MEDIA_URL}}{{ page.picture }}" >
+                        {% thumbnail page.picture "100x100" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                        {% endif %}
+                        <h1>{{ page.title }}</h1>
+                        {{ page.subtitle|verbose:"<h2>%s</h2>" }}
+                        <div class="text">
+                            {{ page.texte|safe }}
+                        </div>
+                    {% endif %}
+                    </article>
+                {% endfor %}
+                </section>
+            </div>
+                   
+        </main>
+      
+    
+{% endblock content %}
 
+{% block javascripts %}
+    {{ block.super }}
+    {# <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script> #}
+    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <script>
+    $(function(){
 
+        L.mapbox.accessToken = 'pk.eyJ1IjoiZ2xvYmFsdmVsbyIsImEiOiJjaW9qNWdteGswMDd1dXdreGc2YWN1cGlmIn0.nUcMCBCBWwqZSHfAnXug-Q';
+       
+        var map = L.mapbox.map('map', 'mapbox.mapbox-terrain-v2', {
+          zoomControl: false
+        }).setView([43.1788795,-0.2617652999999791], 14);
 
+        L.tileLayer('https://api.mapbox.com/styles/v1/globalvelo/cioj9t18r000kgsm3aqlxjzp2/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2xvYmFsdmVsbyIsImEiOiJjaW9qNWdteGswMDd1dXdreGc2YWN1cGlmIn0.nUcMCBCBWwqZSHfAnXug-Q', {
+            attribution: '',
+            maxZoom: 18
+        }).addTo(map);
 
-{% endblock %}
+        map.scrollWheelZoom.disable();
+
+        var z = new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
+
+        // var myLayer = L.mapbox.featureLayer().addTo(map);
+
+        // var geoJson = [{
+        //     "type": "Feature",
+        //     "geometry": {
+        //         "type": "Point",
+        //         "coordinates": [-0.2617652999999791,43.1788795]
+        //     },
+        //     "properties": {
+        //         "icon": {
+        //             "iconUrl": "{{ STATIC_URL }}img/gv-mapicon.png",
+        //             "iconSize": [59, 52], // size of the icon
+        //             "iconAnchor": [20, 50], // point of the icon which will correspond to marker's location
+        //             "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
+        //             "className": "dot"
+        //         }
+        //     }
+        // }];
+
+        // // Set a custom icon on each marker based on feature properties.
+        // myLayer.on('layeradd', function(e) {
+        //     var marker = e.layer,
+        //         feature = marker.feature;
+
+        //     marker.setIcon(L.icon(feature.properties.icon));
+        // });
+
+        // // Add features to the map.
+        // myLayer.setGeoJSON(geoJson);
+
+    })
+    </script>
+{% endblock javascripts %}
