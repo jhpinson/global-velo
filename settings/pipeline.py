@@ -11,15 +11,7 @@ PIPELINE_CSS = {
         'output_filename': 'c/main.css',
     },
 
-    'teasing': {
-        'source_filenames': (
-            'css/main.css',
-            'css/dev.css',
-            'css/forms.css',
-            'css/teasing.css'
-        ),
-        'output_filename': 'c/teasing.css',
-    },
+   
 }
 
 PIPELINE_JS = {
