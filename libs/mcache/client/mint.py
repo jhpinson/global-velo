@@ -1,11 +1,13 @@
-# -*- coding: utf-8 -*-
+# encoding: utf-8
+
 from __future__ import absolute_import, unicode_literals
 import time
 import warnings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django_redis.client import DefaultClient
+from django_redis.exceptions import ConnectionInterrupted
 from redis.exceptions import ConnectionError
-from redis_cache.client import DefaultClient
-from redis_cache.exceptions import ConnectionInterrupted
+
 
 MINT_DELAY = 120
 
@@ -24,7 +26,7 @@ class MintClient(DefaultClient):
     def incr_version(self, key, delta=1, version=None, client=None):
         warnings.warn("incr_version is not use in this client.")
 
-    def set(self, key, value, timeout=DEFAULT_TIMEOUT, version=None, client=None, nx=False):
+    def set(self, key, value, timeout=DEFAULT_TIMEOUT, version=None, client=None, nx=False, xx=False):
         """
         Persist a value to the cache, and set an optional expiration time.
         Also supports optional nx parameter. If set to True - will use redis setnx instead of set.
@@ -34,7 +36,7 @@ class MintClient(DefaultClient):
             client = self.get_client(write=True)
 
         key = self.make_key(key, version=version)
-        value = self.pickle(value)
+        value = self.encode(value)
 
         if timeout is True:
             warnings.warn("Using True as timeout value, is now deprecated.", DeprecationWarning)
@@ -108,4 +110,4 @@ class MintClient(DefaultClient):
         if value is None:
             return default
 
-        return self.unpickle(value)
+        return self.decode(value)
