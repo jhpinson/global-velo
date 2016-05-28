@@ -78,7 +78,7 @@ class AdminUserChangeForm(forms.ModelForm):
 
     class Meta:
         model = models.User
-
+        exclude = ()
     def __init__(self, *args, **kwargs):
         super(AdminUserChangeForm, self).__init__(*args, **kwargs)
         f = self.fields.get('user_permissions', None)

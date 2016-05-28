@@ -8,7 +8,7 @@ from django.http.response import HttpResponse
 from django.views.generic.edit import FormView
 from django.conf import settings
 
-from templated_email import send_templated_mail
+#from templated_email import send_templated_mail
 
 from . import forms
 from utils.ajax import serialize_form_errors
