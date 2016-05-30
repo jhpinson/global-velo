@@ -10,7 +10,6 @@ from contact.forms import Contact as ContactForm
 from contact.views import Contact as ContactView
 
 
-from phonenumber_field.modelfields import PhoneNumberField
 
 from django import forms
 from crispy_forms.helper import FormHelper
