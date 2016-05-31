@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.sitemaps',
 
-    'globalvelo',
+    'project',
     'pipeline',
     'crispy_forms',
     'password_reset',
