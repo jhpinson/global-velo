@@ -2,7 +2,7 @@
 
 {% block bodyclass %}home{% endblock bodyclass %}
 
-{% load staticfiles utils %}
+{% load staticfiles utils thumbnail %}
 
 {% block content %}
 
@@ -15,7 +15,8 @@
             </div>         
             <div class="owl-carousel">
             {% for slide in slides  %}
-                <div class="slide" id="slide-{{ slide.id }}" style="background-image: url({{ MEDIA_URL }}/{{ slide.picture }})">
+                {% thumbnail slide.picture '1850' as im %}
+                <div class="slide" id="slide-{{ slide.id }}" style="background-image: url({{ im.url }})">
                     <a href="{{ slide.url }}">
                         <div>
                             <span class="title">
@@ -27,6 +28,7 @@
                         </div>
                     </a>
                 </div>
+                {% endthumbnail %}
             {% endfor %}
             </div>
             </div>     
