@@ -72,10 +72,7 @@
                                     <img src="{{ im.url }}" alt="{{ partner.name }}" width="{{ im.width }}" height="{{ im.height }}">
                                  </div>
                                  {% endthumbnail %}
-                                {% thumbnail partner.picture "100x100" crop="center" as im %}
-                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                                {% endthumbnail %}
-                                    {{ partner.picture.url|verbose:'<img src="%s">'|safe }}
+                                
                                     <strong>{{ partner.name }}</strong>
                                 </a>
                             {% endfor %}
@@ -83,8 +80,8 @@
                     
                     {% else %}
                         {% if page.picture %}
-                        <img src="{{MEDIA_URL}}{{ page.picture }}" >
-                        {% thumbnail page.picture "100x100" crop="center" as im %}
+
+                        {% thumbnail page.picture "720x480" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                         {% endthumbnail %}
                         {% endif %}
