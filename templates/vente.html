@@ -76,7 +76,10 @@
                         {% for category in bike.categories.all %} {{ category.short_label }} {% endfor %}
                         {% if bike.second_hand %} occasion{% else %}neuf {% endif %}">
                         <a href="#">
-                            <img src="{{MEDIA_URL}}{{ bike.picture }}" >
+                            {% thumbnail bike.picture "450x300" crop="center" as im %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                            {% endthumbnail %}
+                            
                             <div class="title">
                                 <h1>{{ bike.label }}</h1>
                                 <span class="price">{{ bike.price }} €</span>
@@ -108,51 +111,8 @@
                     
                 {% for page in pages %}
                     <article id="{{ page.title|slugify }}">
-                    {% if page.template ==  "contacts" %}
-                        <h1>{{ page.title }}</h1>
-                        {{ page.subtitle|verbose:"<h2>%s</h2>"|safe }}
-                        <div class="text">
-                            {{ page.texte|safe }}
-                        </div>
-                        <form data-ajax-uri="{% url 'shop-contact-ajax' %}" action="{% url 'shop-contact' %}" method="POST">
-                            <div class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
-                                Votre message a été envoyé !
-                            </div>
-
-                            {% crispy form %}
-
-                            <div class="buttonHolder right">
-                                <input type="submit" class="btn btn-primary " value="Envoyer">
-                            </div>
-                        </form>
-
-                    {% elif page.template == "partners" %}
-                        <h1>{{ page.title }}</h1>
-                        {{ page.subtitle|verbose:"<h2>%s</h2>"|safe }}
-                        <div class="text">
-                            {{ page.texte|safe }}
-                        </div>
-                        <div id="partners">
-                            {% for partner in partners  %}
-                                <a href="{{ partner.url }}">
-                                {% thumbnail partner.picture '200' as im %}
-                                 <div class="col-sm-6 col-3">
-                                    <img src="{{ im.url }}" alt="{{ partner.name }}" width="{{ im.width }}" height="{{ im.height }}">
-                                 </div>
-                                 {% endthumbnail %}
-                                {% thumbnail partner.picture "100x100" crop="center" as im %}
-                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                                {% endthumbnail %}
-                                    {{ partner.picture.url|verbose:'<img src="%s">'|safe }}
-                                    <strong>{{ partner.name }}</strong>
-                                </a>
-                            {% endfor %}
-                        </div>
-                    
-                    {% else %}
                         {% if page.picture %}
-                        <img src="{{MEDIA_URL}}{{ page.picture }}" >
-                        {% thumbnail page.picture "100x100" crop="center" as im %}
+                        {% thumbnail page.picture "720" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                         {% endthumbnail %}
                         {% endif %}
@@ -161,7 +121,6 @@
                         <div class="text">
                             {{ page.texte|safe }}
                         </div>
-                    {% endif %}
                     </article>
                 {% endfor %}
                 </section>
