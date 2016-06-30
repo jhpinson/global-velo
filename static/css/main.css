@@ -2639,6 +2639,7 @@ th {
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
+  background: url("owl.video.play.png") no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -3544,18 +3545,22 @@ form label {
   padding: .5em 0;
 }
 /* line 676, ../scss/global.scss */
+form .control-group {
+  margin-bottom: .5em;
+}
+/* line 679, ../scss/global.scss */
 form .controls,
 form .help-block, form .help-block-error,
 form .buttonHolder {
   margin-left: 25%;
 }
-/* line 680, ../scss/global.scss */
+/* line 683, ../scss/global.scss */
 form .controls p,
 form .help-block p, form .help-block-error p,
 form .buttonHolder p {
   margin-left: 0;
 }
-/* line 682, ../scss/global.scss */
+/* line 685, ../scss/global.scss */
 form button,
 form input[type=submit] {
   padding: .5em 1.2em;
@@ -3567,36 +3572,36 @@ form input[type=submit] {
 }
 
 /* --------------------------------------------------------------- FOOTER */
-/* line 696, ../scss/global.scss */
+/* line 699, ../scss/global.scss */
 footer {
   background: #232325;
   color: #777;
   margin-top: 50px;
   padding: 50px 0;
 }
-/* line 703, ../scss/global.scss */
+/* line 706, ../scss/global.scss */
 footer a {
   color: #888;
 }
-/* line 703, ../scss/global.scss */
+/* line 706, ../scss/global.scss */
 footer a:hover {
   color: #A9C944;
 }
-/* line 704, ../scss/global.scss */
+/* line 707, ../scss/global.scss */
 footer p, footer h2 {
   line-height: 1.6;
 }
-/* line 705, ../scss/global.scss */
+/* line 708, ../scss/global.scss */
 footer h2 {
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-/* line 710, ../scss/global.scss */
+/* line 713, ../scss/global.scss */
 footer p + h2 {
   margin-top: 2em;
 }
-/* line 711, ../scss/global.scss */
+/* line 714, ../scss/global.scss */
 footer > div {
   display: -webkit-flex;
   -webkit-flex-direction: row;
@@ -3605,23 +3610,23 @@ footer > div {
   flex-direction: row;
   flex-align: center;
 }
-/* line 718, ../scss/global.scss */
+/* line 721, ../scss/global.scss */
 footer > div > div {
   flex: 1;
   margin: 0 0 0 40px;
 }
-/* line 721, ../scss/global.scss */
+/* line 724, ../scss/global.scss */
 footer > div > div:first-child {
   margin-left: 0;
 }
-/* line 723, ../scss/global.scss */
+/* line 726, ../scss/global.scss */
 footer > div .about img {
   display: block;
   margin-bottom: 2em;
 }
 
 @media (max-width: 850px) {
-  /* line 733, ../scss/global.scss */
+  /* line 736, ../scss/global.scss */
   .subnav {
     width: auto !important;
     border-right: none;
@@ -3633,70 +3638,70 @@ footer > div .about img {
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
   }
-  /* line 743, ../scss/global.scss */
+  /* line 746, ../scss/global.scss */
   .subnav a {
     display: inline-block;
     margin: 0 .5em;
     letter-spacing: 0;
   }
 
-  /* line 750, ../scss/global.scss */
+  /* line 753, ../scss/global.scss */
   .page section {
     float: none;
     margin: 0;
   }
 
-  /* line 751, ../scss/global.scss */
+  /* line 754, ../scss/global.scss */
   .page article {
     padding-top: 50px;
     margin-bottom: 10px;
   }
-  /* line 752, ../scss/global.scss */
+  /* line 755, ../scss/global.scss */
   .page article:first-child {
     padding-top: 20px;
   }
 }
 @media (max-width: 650px) {
-  /* line 762, ../scss/global.scss */
+  /* line 765, ../scss/global.scss */
   #header #menu_toggle {
     display: block;
   }
 
-  /* line 764, ../scss/global.scss */
+  /* line 767, ../scss/global.scss */
   footer > div {
     -webkit-flex-direction: column;
     flex-direction: column;
     text-align: center;
   }
 
-  /* line 765, ../scss/global.scss */
+  /* line 768, ../scss/global.scss */
   footer > div > div {
     margin: 0 0 40px 0;
   }
 
-  /* line 766, ../scss/global.scss */
+  /* line 769, ../scss/global.scss */
   footer > div .about img {
     margin: 0 auto 2em;
   }
 
-  /* line 767, ../scss/global.scss */
+  /* line 770, ../scss/global.scss */
   #partners a {
     width: 50%;
   }
 
-  /* line 769, ../scss/global.scss */
+  /* line 772, ../scss/global.scss */
   #header #logo {
     margin: 0 auto;
     display: block;
     float: none;
   }
 
-  /* line 770, ../scss/global.scss */
+  /* line 773, ../scss/global.scss */
   #header nav ul {
     display: none;
   }
 
-  /* line 771, ../scss/global.scss */
+  /* line 774, ../scss/global.scss */
   #header nav.visible ul {
     display: block;
     background: #232325;
@@ -3708,84 +3713,94 @@ footer > div .about img {
     width: 100%;
     padding: 2.5em 0 2em;
   }
-  /* line 781, ../scss/global.scss */
+  /* line 784, ../scss/global.scss */
   #header nav.visible ul li {
     line-height: 1.5;
   }
+
+  /* line 787, ../scss/global.scss */
+  .home .navbox {
+    display: block;
+  }
+
+  /* line 788, ../scss/global.scss */
+  .home .navbox li {
+    margin: 0 0 40px;
+  }
 }
 @media (max-width: 500px) {
-  /* line 787, ../scss/global.scss */
+  /* line 794, ../scss/global.scss */
   .page article h1 {
     text-align: center;
   }
 
-  /* line 788, ../scss/global.scss */
+  /* line 795, ../scss/global.scss */
   form label {
     float: none;
     width: auto;
   }
 
-  /* line 789, ../scss/global.scss */
+  /* line 796, ../scss/global.scss */
   form .controls, form .buttonHolder {
     margin-left: 0;
   }
 
-  /* line 791, ../scss/global.scss */
+  /* line 798, ../scss/global.scss */
   #bikes {
     padding: 20px 50px;
   }
 
-  /* line 792, ../scss/global.scss */
+  /* line 799, ../scss/global.scss */
   #bikes {
     padding: 0;
   }
 
-  /* line 793, ../scss/global.scss */
+  /* line 800, ../scss/global.scss */
   #bikes .owl-nav div {
     position: static;
     margin-top: 0;
   }
 
-  /* line 794, ../scss/global.scss */
+  /* line 801, ../scss/global.scss */
   #bikes .owl-nav div.owl-prev {
     float: left;
     margin-left: 20px;
   }
 
-  /* line 795, ../scss/global.scss */
+  /* line 802, ../scss/global.scss */
   #bikes .owl-nav div.owl-next {
     float: right;
     margin-right: 20px;
   }
 
-  /* line 796, ../scss/global.scss */
+  /* line 803, ../scss/global.scss */
   #bikes .owl-nav {
     overflow: hidden;
   }
 
-  /* line 797, ../scss/global.scss */
+  /* line 804, ../scss/global.scss */
   #bikes .owl-carousel .owl-stage-outer {
     margin-right: 0;
   }
 
-  /* line 798, ../scss/global.scss */
+  /* line 805, ../scss/global.scss */
   .bike .price {
     right: 15px;
   }
 
-  /* line 799, ../scss/global.scss */
+  /* line 806, ../scss/global.scss */
   #header li {
     display: block;
     margin: 0 0 .5em;
   }
 }
 @media (max-width: 360px) {
-  /* line 804, ../scss/global.scss */
+  /* line 813, ../scss/global.scss */
   .wrapper {
     padding: 0 20px;
   }
 
-  /* line 805, ../scss/global.scss */
+  /* line 814, ../scss/global.scss */
   #header #logo {
     background-position: 0 center;
     background-size: 100% auto;
