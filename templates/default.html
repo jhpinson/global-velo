@@ -31,8 +31,7 @@
                     <article id="{{ page.title|slugify }}">
                     
                         {% if page.picture %}
-                        <img src="{{MEDIA_URL}}{{ page.picture }}" >
-                        {% thumbnail page.picture "100x100" crop="center" as im %}
+                        {% thumbnail page.picture "720x480" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                         {% endthumbnail %}
                         {% endif %}
