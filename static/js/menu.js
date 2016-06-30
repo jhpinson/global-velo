@@ -135,7 +135,12 @@
 
         $bikes.toggleClass('alt');
 
-        $('#andmore').css('height', $('#andmore').parent().prev().height() );
+        var $beforeandmore = $('#andmore').parent().prev();
+        
+        $beforeandmore.find('img').first().on('load', function(){
+            var andh = $beforeandmore.height();
+            $('#andmore').css('height', andh );    
+        })
 
         setTimeout(function(){
             $bikes.removeClass('loading'); 
@@ -194,9 +199,6 @@
         } else {
             $bikes.removeClass('loading'); 
         }
-        var s = setTimeout(function(){
-            
-        }, 25000)
     })
 
 })(jQuery);
