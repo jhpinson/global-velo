@@ -187,7 +187,8 @@ main {
         }
     .title {
         display: block;
-        margin: 0 0 1.5em
+        margin: 0 0 1.5em;
+        padding: 0 40px;
     }
     .description {
         background: #fff;
@@ -786,7 +787,7 @@ footer {
 
     .home .navbox { display: block;}
     .home .navbox li { margin: 0 0 40px}
-    
+
     }    
 
 @media (max-width: 500px){

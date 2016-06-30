@@ -29,7 +29,7 @@
         img.onload = function(){
             
             var $home_owl = $('#slideshow .owl-carousel').owlCarousel({
-                
+                loop:true,
                 margin:0,
                 items:1,
                 slideBy:1,
