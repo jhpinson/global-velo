@@ -9,7 +9,4 @@ from . import views
 urlpatterns = patterns('',
   url(r'^nous-contacter\.html$', views.Contact.as_view(), name='shop-contact'),
   url(r'^message-envoye.html$', views.ContactSent.as_view(), name='contact-sent'),
-
-  url(r'^ajax-post-contact/$', views.AjaxContact.as_view(), name='shop-contact-ajax'),
-
 )

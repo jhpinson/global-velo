@@ -46,15 +46,17 @@
                         <div class="text">
                             {{ page.texte|safe }}
                         </div>
-                        <form data-ajax-uri="{% url 'shop-contact-ajax' %}" action="{% url 'shop-contact' %}" method="POST">
-                            <div class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
-                                Votre message a été envoyé !
+                        <form data-ajax-uri="{% url 'shop-contact' %}" action="{% url 'shop-contact' %}" method="POST">
+                            <div data-show-on-success class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
+                                Votre message a été envoyé ! Nous vous contacterons dans les plus brefs délais.
                             </div>
 
-                            {% crispy form %}
+                            <div data-hide-on-success>
+                                {% crispy form %}
 
-                            <div class="buttonHolder right">
-                                <input type="submit" class="btn btn-primary " value="Envoyer">
+                                <div class="buttonHolder right">
+                                    <input type="submit" class="btn btn-primary " value="Envoyer">
+                                </div>
                             </div>
                         </form>
 
@@ -123,35 +125,6 @@
 
         var z = new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 
-        // var myLayer = L.mapbox.featureLayer().addTo(map);
-
-        // var geoJson = [{
-        //     "type": "Feature",
-        //     "geometry": {
-        //         "type": "Point",
-        //         "coordinates": [-0.2617652999999791,43.1788795]
-        //     },
-        //     "properties": {
-        //         "icon": {
-        //             "iconUrl": "{{ STATIC_URL }}img/gv-mapicon.png",
-        //             "iconSize": [59, 52], // size of the icon
-        //             "iconAnchor": [20, 50], // point of the icon which will correspond to marker's location
-        //             "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
-        //             "className": "dot"
-        //         }
-        //     }
-        // }];
-
-        // // Set a custom icon on each marker based on feature properties.
-        // myLayer.on('layeradd', function(e) {
-        //     var marker = e.layer,
-        //         feature = marker.feature;
-
-        //     marker.setIcon(L.icon(feature.properties.icon));
-        // });
-
-        // // Add features to the map.
-        // myLayer.setGeoJSON(geoJson);
 
     })
     </script>

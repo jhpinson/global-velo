@@ -176,6 +176,7 @@ MEDIA_URL = '/medias/'
 AUTH_USER_MODEL= 'users.User'
 
 DEFAULT_FROM_EMAIL = 'no-reply@global-velo.pro'
+CONTACT_EMAIL = os.environ.get('CONTACT_EMAIL', 'jh.pinson@gmail.com')
 
 GRAPPELLI_CLEAN_INPUT_TYPES = False
 
