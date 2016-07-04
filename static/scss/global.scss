@@ -256,9 +256,9 @@ main {
         &:first-child{margin-left: 0;}
         }
 
-        #box-magasin a{ background-image: url("img/location-de-velo-nay.jpg"); }
-        #box-locations a{ background-image: url("img/vtc-famille.jpg"); }
-        #box-velos a{ background-image: url("img/wood.jpg"); }
+        #box-magasin a{ background-image: url("img/home-magasin.jpg"); }
+        #box-locations a{ background-image: url("img/home-vtc-famille.jpg"); }
+        #box-velos a{ background-image: url("img/home-wood.jpg"); }
     
     a {
         display: block;
@@ -378,7 +378,7 @@ main.page {
     padding: 2em;
     li { display: inline-block; margin: 0 1em; position: relative;}
     .sep { color: #ccc}
-    a { text-decoration: none; text-transform: uppercase; display: inline-block; line-height: 1.2; margin-bottom: .5em;}
+    a { text-decoration: none; text-transform: uppercase; display: inline-block; line-height: 1.2; margin-bottom: .5em; border-bottom: 2px solid transparent}
     a:hover,.selected { border-bottom: 2px solid}
 }
 
@@ -404,7 +404,7 @@ main.page {
         left: -1em;
         right: -1em;
         margin: 0;
-        padding: 0 1em 1em;
+        padding: .5em 1em 1em;
         position: absolute;
         z-index: 200;
         text-align: left;
@@ -633,13 +633,13 @@ main.page {
 /* --------------------------------------------------------------- LOCATIONS */
 
 #locations-splash{
-    background-image: url(img/WP_20150816_001.jpg);
+    background-image: url(img/splash-locations.jpg);
 }
 
 /* --------------------------------------------------------------- VENTE */
 
 #velos-splash{
-    background-image: url(img/hm_ktm_action_2016_107.jpg);
+    background-image: url(img/splash-vente.jpg);
 }
 /* --------------------------------------------------------------- SHOP */
 
@@ -647,6 +647,25 @@ main.page {
     pointer-events:none;
 }
 
+/* --------------------------------------------------------------- Partners */
+.partner p {
+    margin-bottom: 1rem;
+}
+.intro p {
+    font-size: 1.25em;
+    margin-bottom: 1rem;
+}
+.partner .detail { margin-left: 240px}
+
+.logo {
+    float: left;
+    background: #fff; 
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+    padding: 30px;
+    margin: 0 40px 0 0
+}
 /* --------------------------------------------------------------- FORMS */
 form {
     input[type=text],
