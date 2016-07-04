@@ -30,13 +30,13 @@ urlpatterns = [
 urlpatterns += [
     url(r'^$', Home.as_view(), {}, "home"),
 
-    url(r'', include('partners.urls')),
+    
     url(r'', include('bikes.urls')),
 
     url(r'^presentation-du-magasin\.html$', Magasin.as_view(), {}, "magasin"),
     url(r'^mentions-legales/$', Mentions.as_view(), {}, "mentions"),
 
-
+    url(r'^partenaires/', include('partners.urls')),
 
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),

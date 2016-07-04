@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block meta %}
+    <title>Global Vélo – {{ object.name }}</title>
+    <meta property="og:title" content="Global Vélo" />
+    <meta property="og:locale" content="{{ LOCALE }}" />
+    <meta property="og:site_name" content="Global Vélo" />
+    <meta property="og:url" content="{{ DOMAIN }}" />
+    <meta property="og:image" content="{{MEDIA_URL}}img/global-velo-cover.png" />
+    <meta property="og:description" content="{{ object.name }} – Partenaire Global vélo.">
+    <meta name="description" content="{{ object.name }} – Partenaire Global vélo">
+{% endblock meta %}
+
+
+{% block bodyclass %}page{% endblock bodyclass %}
+
+{% load staticfiles utils thumbnail %}
+
+{% block content %}
+        
+
+        <main class="page">
+            {% thumbnail partner.image "1900x750" crop="center" quality=70 as im %}                        
+            <div id="partner-splash" class="splash slide" style="background-image:url({{ im.url }})">
+                <span>
+                    <span class="title">
+                        <h1>{{ object.name }}</h1>
+                        <h2 class="long">Partenaire Global vélo</h2>
+                    </span>
+                </span>
+            </div>
+            {% endthumbnail %}
+
+            <div class="wrapper">
+                <nav class="subnav">
+                    {% for p in partners %}
+                        <a href="{{ p.get_partner_url }}">{{ p.name }}</a>
+                    {% endfor %}                    
+                </nav>    
+                <section>
+                            
+            
+                    <article id="{{ object.name|slugify }}" class="partner">
+                        
+                        {% thumbnail object.picture '160' as im %}
+                            <div class="logo">
+                                <img src="{{ im.url }}" alt="Logo {{ object.name }}" width="{{ im.width }}" height="{{ im.height }}">
+                            </div>
+                        {% endthumbnail %}
+                        <div class="detail">
+
+                            <h1>{{ object.name }}</h1>
+                            <div class="intro">
+                                <p>{{ object.description|safe }}</p>
+                            </div>
+
+                            <div class="text">
+
+                                {% if object.website %}<p>URL : <a href='{{ object.website }}'>{{ object.website }}</a></p>{% endif %}
+                                {% if object.phone %}<p>Tél. : {{ object.phone}}</p>{% endif %}
+                                {% if object.email %}<p>E-mail : {{ object.email}}</p>{% endif %}
+
+                                {{ object.texte|safe }}
+                            </div>
+                        </div>
+                        
+                    </article>
+            
+
+                </section>
+            </div>
+                   
+        </main>
+      
+    
+{% endblock content %}
+
+{% block javascripts %}
+    {{ block.super }}
+    
+{% endblock javascripts %}

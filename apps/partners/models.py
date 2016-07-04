@@ -6,6 +6,9 @@ from model_utils.models import TimeStampedModel
 from ordered_model.models import OrderedModel
 from sorl.thumbnail.fields import ImageField
 
+from django.core.urlresolvers import reverse
+from django.template.defaultfilters import slugify
+
 
 class Partner(OrderedModel, TimeStampedModel):
 
@@ -22,3 +25,15 @@ class Partner(OrderedModel, TimeStampedModel):
     active = models.BooleanField('Afficher ce partenaire sur le site', default=True)
 
     picture = ImageField('Logo', upload_to='partners/', null=True, blank=True)
+
+    image = ImageField('Image', upload_to='partners/', null=True, blank=True)
+    texte = models.TextField('Texte', help_text='', null=True, blank=True)
+
+    
+    def get_partner_url(self):
+        
+        if not self.texte:
+            return self.website
+        else:
+            return reverse('partner_detail_view',kwargs={'pk':self.id, 'slug':slugify(self.name)})
+
