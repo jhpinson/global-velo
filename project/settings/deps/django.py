@@ -91,6 +91,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
+                'project.context_processors.common',
             ],
         },
     },
@@ -152,6 +153,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = "sessions"
+
+DOMAIN = 'http://global-velo.pro'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
