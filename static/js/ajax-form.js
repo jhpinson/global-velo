@@ -39,7 +39,8 @@
                             }
 
                         } else {
-                            $form.find('.form-success').show();
+                            $form.find('[data-show-on-success]').show();
+                            $form.find('[data-hide-on-success]').hide();
                             $form.find('[data-role=submit-button]').removeAttr('disabled');
                         }
                     } else {

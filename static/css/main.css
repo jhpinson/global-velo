@@ -3837,3 +3837,12 @@ footer > div .about img {
     width: 120px;
   }
 }
+
+.has-error label, .has-error .help-block-error {
+  color:red;
+}
+
+.has-error input, .has-error textarea {
+  border: 1px solid red !important;
+  color:red;
+}

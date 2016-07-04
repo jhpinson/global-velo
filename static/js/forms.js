@@ -3,7 +3,9 @@
   $(document).ready(function () {
 
     $('input, textarea').on('keypress', function () {
-      $(this).parents('.has-error').removeClass('has-error');
+      var $parent = $(this).parents('.has-error');
+      $parent.removeClass('has-error');
+      $parent.find('.help-block-error').remove();
     });
 
   });

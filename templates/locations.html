@@ -132,15 +132,16 @@
 
                     <article id="reservation">
                         <h1>Réserver des vélos en location</h1>
-                        <form data-ajax-uri="{% url 'shop-contact-ajax' %}" action="{% url 'shop-contact' %}" method="POST">
-                            <div class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
-                                Votre message a été envoyé !
+                        <form data-ajax-uri="{% url 'bike-rental' %}" action="{% url 'shop-contact' %}" method="POST">
+                            <div data-show-on-success class="form-success" {% if not show_success_message %}style="display:none"{% endif %}>
+                                Votre message a été envoyé ! Votre message a été envoyé ! Nous vous contacterons dans les plus brefs délais.
                             </div>
+                            <div data-hide-on-success >
+                                {% crispy form %}
 
-                            {% crispy form %}
-
-                            <div class="buttonHolder right">
-                                <input type="submit" class="btn btn-primary " value="Envoyer">
+                                <div class="buttonHolder right">
+                                    <input type="submit" class="btn btn-primary " value="Envoyer">
+                                </div>
                             </div>
                         </form>
                     </article>

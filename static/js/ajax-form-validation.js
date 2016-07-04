@@ -5,7 +5,7 @@
         cleanFormErrors: function () {
             var $this = $(this);
             $this.find('.help-block-error').remove();
-            $this.find('.form-group.has-error').removeClass('has-error');
+            $this.find('.control-group.has-error').removeClass('has-error');
             $this.find('.message.error').hide();
         },
 
@@ -28,7 +28,7 @@
             for (k in errors.details) {
                 var field = errors.details[k];
                 var html;
-                var $parent = $this.find('[name='+ k +']').closest('.form-group');
+                var $parent = $this.find('[name='+ k +']').closest('.control-group');
                 if (typeof field === 'function') {
                     continue;
                 }

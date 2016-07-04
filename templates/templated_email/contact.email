@@ -1,5 +1,0 @@
-{% block subject %}[global-velo.pro] {{subject}}{% endblock %}
-{% block plain %}expéditeur: {{email}}
-
-{{message}}
-{% endblock %}
