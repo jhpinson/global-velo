@@ -15,7 +15,7 @@
             </div>         
             <div class="owl-carousel">
             {% for slide in slides  %}
-                {% thumbnail slide.picture '1850' as im %}
+                {% thumbnail slide.picture '1850' quality=70 as im %}
                 <div class="slide" id="slide-{{ slide.id }}" style="background-image: url({{ im.url }})">
                     <a href="{{ slide.url }}">
                         <div>
