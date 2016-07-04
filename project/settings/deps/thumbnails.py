@@ -3,7 +3,7 @@ from __future__ import unicode_literals, absolute_import
 
 import os
 
-THUMBNAIL_QUALITY = 100
+THUMBNAIL_QUALITY = 80
 THUMBNAIL_DEBUG = False
 THUMBNAIL_PRESERVE_FORMAT = True
 THUMBNAIL_PROGRESSIVE = True
