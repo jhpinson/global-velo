@@ -5,6 +5,7 @@
     <meta property="og:locale" content="{{ LOCALE }}" />
     <meta property="og:site_name" content="Global Vélo" />
     <meta property="og:url" content="{{ DOMAIN }}" />
+    <meta property="og:image" content="{{STATIC_URL}}img/global-velo-cover.png" />
     <meta property="og:description" content="Global Vélo vous accueille dans sa boutique à Nay pour répondre vos envies de sorties au grand air sur deux roues. Venez découvrir nos vélos en location et à vendre, neufs ou d’occasion.">
     <meta name="description" content="Global Vélo vous accueille dans sa boutique à Nay pour répondre vos envies de sorties au grand air sur deux roues. Venez découvrir nos vélos en location et à vendre, neufs ou d’occasion.">
 {% endblock meta %}
@@ -36,6 +37,7 @@
                     {% for page in pages %}
                         <a href="#{{ page.title|slugify }}">{{ page.title }}</a>
                     {% endfor %}
+                    <a href="#access">Plan d’accès</a>
                 </nav>    
                 <section>
                 {% for page in pages %}
@@ -95,6 +97,13 @@
                     {% endif %}
                     </article>
                 {% endfor %}
+                <article id="access">
+                    <h1>Plan d’accès</h1>
+                    <div id="accessmap"></div>
+                    <p>
+                        <a href="https://goo.gl/maps/Se4451hwbW72">Global Vélo sur Google Maps.</a>
+                    </p>
+                </article>
                 </section>
             </div>
                    
@@ -125,6 +134,55 @@
 
         var z = new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 
+
+        // second map 
+
+        var access = L.mapbox.map('accessmap', 'mapbox.mapbox-terrain-v2', {
+          zoomControl: false
+        }).setView([43.1788795,-0.2617652999999791], 10);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/globalvelo/ciqrqe09t0008c7nioqiqyp1l/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2xvYmFsdmVsbyIsImEiOiJjaW9qNWdteGswMDd1dXdreGc2YWN1cGlmIn0.nUcMCBCBWwqZSHfAnXug-Q', {
+            attribution: '',
+            maxZoom: 18
+        }).addTo(access);
+
+        access.scrollWheelZoom.disable();
+
+        var myLayer = L.mapbox.featureLayer().addTo(access);
+
+        var geojson = [{
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                // coordinates here are in longitude, latitude order because
+                // x, y is the standard for GeoJSON and many formats
+                coordinates: [
+                  -0.2617652999999791,
+                  43.1788795
+                ]
+            },
+            properties: {
+                title: 'Global Vélo',
+                description: '16 rue Clémenceau, 64800 Nay, France',
+                icon: {
+                    className: "my-icon icon-dc", // class name to style
+                    html: "&#9733;", // add content inside the marker
+                    iconSize: null // size of icon, use null to set the size in CSS
+                  }
+            }
+        }]
+        myLayer.setGeoJSON(geojson);
+
+        myLayer.on('layeradd', function(e) {
+          var marker = e.layer,
+              feature = marker.feature;
+          marker.setIcon(L.divIcon(feature.properties.icon));
+        });
+
+        var yz = new L.Control.Zoom({ position: 'bottomright' }).addTo(access);
+
+
+        
 
     })
     </script>
