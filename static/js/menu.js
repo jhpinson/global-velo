@@ -25,7 +25,7 @@
         var images_to_preload = []
         var img = new Image();
         img.src = $('.slide').first().css('background-image').replace('url(','').replace(')','').replace('"', '').replace('"', '');
-        console.log($('.slide').first().css('background-image').replace('url(','').replace(')','').replace('"', '').replace('"', ''))
+        // console.log($('.slide').first().css('background-image').replace('url(','').replace(')','').replace('"', '').replace('"', ''))
         img.onload = function(){
             
             var $home_owl = $('#slideshow .owl-carousel').owlCarousel({
@@ -63,6 +63,14 @@
     var s = setTimeout(function(){
         $('.page .splash').addClass('active');
     }, 800)
+
+    ////////////////////////////////////////// occasions
+    $('#occasions').on('click','a',function(e){
+        e.preventDefault();
+        $(this).closest('.bike').toggleClass('big')
+    })
+
+
 
     ////////////////////////////////////////// bike page
 
@@ -119,6 +127,16 @@
     var $bikes = $('#bikes'),
         $owl = null;
 
+    $('.bike').each(function(){
+        var $img = $(this).find('img').first(),
+            im_hres = $img.data('hres'),
+            $im_hres = $('<img class="high">');
+        console.log(im_hres)
+        $im_hres.attr('src', im_hres)
+        $img.after($im_hres);
+        
+    })
+
     pleaseOwl = function(current){
         
         $bikes.addClass('loading');
@@ -135,12 +153,7 @@
 
         $bikes.toggleClass('alt');
 
-        var $beforeandmore = $('#andmore').parent().prev();
-        
-        $beforeandmore.find('img').first().on('load', function(){
-            var andh = $beforeandmore.height();
-            $('#andmore').css('height', andh );    
-        })
+        computeAndMoreHeight()
 
         setTimeout(function(){
             $bikes.removeClass('loading'); 
@@ -148,11 +161,27 @@
         
     }
 
+    computeAndMoreHeight = function(){
+        var $beforeandmore = $('#andmore').parent().prev();
+        var andh = $beforeandmore.height();
+        $('#andmore').css('height', andh );    
+
+        $beforeandmore.find('img:visible').on('load', function(){
+            var andh = $beforeandmore.height();
+            $('#andmore').css('height', andh );    
+        })
+    }
+
     // owl()!
     pleaseOwl();
 
     $owl.on('click', '.owl-item a', function(e) {
-        e.preventDefault();
+        if($(this).attr('href') == '#'){
+            e.preventDefault();
+        } else {
+            return true;
+        }
+        
         pleaseOwl();
         $owl.trigger('to.owl.carousel', [$(this).closest('.owl-item').index(), 500]);        
     });
@@ -172,10 +201,15 @@
 
     $('#filtres a').on('click', function(e){
 
-        e.preventDefault();
+        
 
         var filter = $(this).data('filter');
-        if(filter === undefined) return;
+        var href = $(this).attr('href');
+        if(filter === undefined && href !="#") {
+            return true;
+        } else {
+            e.preventDefault();
+        }
 
         $bikes.addClass('loading');
 
