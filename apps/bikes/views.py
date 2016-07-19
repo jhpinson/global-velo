@@ -8,7 +8,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
 from pages.models import Page, Section
-from bikes.models import Bike, Category
+from bikes.models import Bike, Category, Brand
 
 from contact.forms import Contact as ContactForm, RentalContact
 from contact.views import Contact as ContactView
@@ -44,6 +44,7 @@ class BikeRental(FormView):
 
         section = Section.objects.get(pk=2)
         context['pages'] = Page.objects.filter(section=section, visible=True)
+        context['brands'] = Brand.objects.filter(visible=True)
 
         context['categories'] = Category.objects.all()
         context['bikes'] = Bike.objects.filter(for_sale=False, visible=True)
@@ -62,9 +63,11 @@ class BikeSell(TemplateView):
 
         section = Section.objects.get(pk=3)
         context['pages'] = Page.objects.filter(section=section, visible=True)
-
+        context['brands'] = Brand.objects.filter(visible=True)
         context['categories'] = Category.objects.all()
         context['form'] = ContactForm
-        context['bikes'] = Bike.objects.filter(for_sale=True, visible=True)
+        context['bikes'] = Bike.objects.filter(for_sale=True, visible=True, second_hand=False)
+        context['occasions'] = Bike.objects.filter(for_sale=True, visible=True, second_hand=True)
+        
 
         return context        
