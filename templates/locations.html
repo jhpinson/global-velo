@@ -58,7 +58,9 @@
                         {% if bike.second_hand %} occasion{% else %}neuf {% endif %}">
                         <a href="#">
                             {% thumbnail bike.picture "450x300" crop="center" as im %}
-                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                {% thumbnail bike.picture "900x600" crop="center" as im_hres %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="low" data-hres="{{ im_hres.url }}">
+                                {% endthumbnail %}
                             {% endthumbnail %}
                             <div class="title">
                                 <h1>{{ bike.label }}</h1>
@@ -75,7 +77,7 @@
                     </div>
                     {% if forloop.last %}
                     <div class="bike andmore" id="andmore">
-                        <a href="{% url 'shop-contact' %}">&amp; bien plus au magasin&nbsp;!</a>
+                        <a href="{% url 'shop-contact' %}#access">&amp; bien plus au magasin !</a>
                     </div>
                         
                     {% endif %}

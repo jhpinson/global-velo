@@ -33,32 +33,31 @@
             
             <ul id="filtres">
                 <li><a href="#" class="selected" data-filter="*">Tous</a></li>
-                <li><a href="#" data-filter=".man">Homme</a></li>
-                <li><a href="#" data-filter=".woman">Femme</a></li>
-                <li><a href="#" data-filter=".child">Enfant</a></li>   
+                <li><a href="#" data-filter=".vtt">VTT</a></li>
+                <li><a href="#" data-filter=".vtc">VTC</a></li>
+                <li><a href="#" data-filter=".route">Route</a></li>   
+                <li><a href="#" data-filter=".vae">E.bike</a></li>   
+                
                 <li class="sep">|</li>
                 <li class="sub">
                     <a href="#">Marque</a>
                     <ul>
-                        <li><a href="#" data-filter=".ktm">KTM</a></li>
-                        <li><a href="#" data-filter=".bbb">BBB</a></li>
-                        <li><a href="#" data-filter=".bh">BH</a></li>   
-                        <li><a href="#" data-filter=".montana">Montana</a></li>   
+                    {% for brand in brands %}
+                        <li><a href="#" data-filter="{{ brand.title|slugify }}">{{ brand.title }}</a></li>
+                    {% endfor %}
                     </ul>
                 </li>
                 <li class="sep">|</li>
                 <li class="sub">
                     <a href="#">Style</a>
                     <ul>
-                    <li><a href="#" data-filter=".vtt">VTT</a></li>
-                    <li><a href="#" data-filter=".vtc">VTC</a></li>
-                    <li><a href="#" data-filter=".route">Route</a></li>   
-                    <li><a href="#" data-filter=".vae">E.bike</a></li>   
+                    <li><a href="#" data-filter=".man">Homme</a></li>
+                    <li><a href="#" data-filter=".woman">Femme</a></li>
+                    <li><a href="#" data-filter=".child">Enfant</a></li>   
                     </ul>
                 </li>
                 <li class="sep">|</li>
-                <li><a href="#" data-filter=".neuf">Neuf</a></li>
-                <li><a href="#" data-filter=".occasion">Occasion</a></li>
+                <li><a href="#occasions" >Occasions</a></li>
             </ul>
 
             <div id="bikes" class="loading alt">
@@ -77,12 +76,14 @@
                         {% for category in bike.categories.all %} {{ category.short_label }} {% endfor %}
                         {% if bike.second_hand %} occasion{% else %}neuf {% endif %}">
                         <a href="#">
-                            {% thumbnail bike.picture "900x600" crop="center" as im %}
-                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                            {% thumbnail bike.picture "450x300" crop="center" as im %}
+                                {% thumbnail bike.picture "900x600" crop="center" as im_hres %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="low" data-hres="{{ im_hres.url }}">
+                                {% endthumbnail %}
                             {% endthumbnail %}
                             
                             <div class="title">
-                                <h1>{{ bike.label }}</h1>
+                                <h1>{{ bike.label }} {{ bike.second_hand }}</h1>
                                 <span class="price">{{ bike.price }} €</span>
                             </div>
                             <div class="text">
@@ -93,7 +94,7 @@
                     </div>
                     {% if forloop.last %}
                     <div class="bike andmore" id="andmore">
-                        <a href="{% url 'shop-contact' %}">&amp; bien plus au magasin !</a>
+                        <a href="{% url 'shop-contact' %}#access">&amp; bien plus au magasin !</a>
                     </div>
                         
                     {% endif %}
@@ -123,6 +124,36 @@
                             {{ page.texte|safe }}
                         </div>
                     </article>
+                    {% if forloop.last %}
+                        <article id="occasions">
+                            {% for bike in occasions  %}
+                                <div class="
+                                    bike 
+                                    {{ bike.gender }} 
+                                    {{ bike.brand|slugify }}
+                                    {% for category in bike.categories.all %} {{ category.short_label }} {% endfor %}
+                                    {% if bike.second_hand %} occasion{% else %}neuf {% endif %}">
+                                    <a href="#">
+                                        {% thumbnail bike.picture "450x300" crop="center" as im %}
+                                            {% thumbnail bike.picture "900x600" crop="center" as im_hres %}
+                                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="low" data-hres="{{ im_hres.url }}">
+                                            {% endthumbnail %}
+                                        {% endthumbnail %}
+                                        
+                                        <div class="title">
+                                            <h1>{{ bike.label }}</h1>
+                                            <span class="price">{{ bike.price }} €</span>
+                                        </div>
+                                        <div class="text">
+                                            {{ bike.brand }} — 
+                                            {{ bike.description|safe }}                                
+                                        </div>                            
+                                    </a>
+                                </div>
+                                
+                            {% endfor %}
+                        </article>
+                    {% endif %}
                 {% endfor %}
                 </section>
             </div>
