@@ -27,6 +27,7 @@ class Brand(models.Model):
         verbose_name_plural = "Marques"
 
     title = models.CharField('Nom', max_length=64)
+    visible = models.BooleanField(verbose_name="Visible", default=True)
 
     def __unicode__(self):
         return self.title
