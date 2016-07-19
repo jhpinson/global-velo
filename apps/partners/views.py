@@ -24,5 +24,5 @@ class PartnerDetail(DetailView):
         
         context = super(PartnerDetail, self).get_context_data(**kwargs)
         
-        context['partners'] = models.Partner.objects.all()
+        context['partners'] = models.Partner.objects.filter(active=True)
         return context
