@@ -1410,85 +1410,97 @@ footer > div .about img {
   .home .navbox li {
     margin: 0 0 40px;
   }
+
+  /* line 851, ../scss/global.scss */
+  .logo {
+    float: none;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  /* line 852, ../scss/global.scss */
+  .partner .detail {
+    margin-left: 0;
+  }
 }
 @media (max-width: 500px) {
-  /* line 854, ../scss/global.scss */
+  /* line 857, ../scss/global.scss */
   .page article h1 {
     text-align: center;
   }
 
-  /* line 855, ../scss/global.scss */
+  /* line 858, ../scss/global.scss */
   form label {
     float: none;
     width: auto;
   }
 
-  /* line 856, ../scss/global.scss */
+  /* line 859, ../scss/global.scss */
   form .controls, form .buttonHolder {
     margin-left: 0;
   }
 
-  /* line 858, ../scss/global.scss */
+  /* line 861, ../scss/global.scss */
   #bikes {
     padding: 20px 50px;
   }
 
-  /* line 859, ../scss/global.scss */
+  /* line 862, ../scss/global.scss */
   #bikes {
     padding: 0;
   }
 
-  /* line 860, ../scss/global.scss */
+  /* line 863, ../scss/global.scss */
   #bikes .owl-nav div {
     position: static;
     margin-top: 0;
   }
 
-  /* line 861, ../scss/global.scss */
+  /* line 864, ../scss/global.scss */
   #bikes .owl-nav div.owl-prev {
     float: left;
     margin-left: 20px;
   }
 
-  /* line 862, ../scss/global.scss */
+  /* line 865, ../scss/global.scss */
   #bikes .owl-nav div.owl-next {
     float: right;
     margin-right: 20px;
   }
 
-  /* line 863, ../scss/global.scss */
+  /* line 866, ../scss/global.scss */
   #bikes .owl-nav {
     overflow: hidden;
   }
 
-  /* line 864, ../scss/global.scss */
+  /* line 867, ../scss/global.scss */
   #bikes .owl-carousel .owl-stage-outer {
     margin-right: 0;
   }
 
-  /* line 865, ../scss/global.scss */
+  /* line 868, ../scss/global.scss */
   .bike .price {
     right: 15px;
   }
 
-  /* line 866, ../scss/global.scss */
+  /* line 869, ../scss/global.scss */
   #header li {
     display: block;
     margin: 0 0 .5em;
   }
 
-  /* line 868, ../scss/global.scss */
+  /* line 871, ../scss/global.scss */
   #occasions .bike {
     width: 100%;
   }
 }
 @media (max-width: 360px) {
-  /* line 875, ../scss/global.scss */
+  /* line 878, ../scss/global.scss */
   .wrapper {
     padding: 0 20px;
   }
 
-  /* line 876, ../scss/global.scss */
+  /* line 879, ../scss/global.scss */
   #header #logo {
     background-position: 0 center;
     background-size: 100% auto;
