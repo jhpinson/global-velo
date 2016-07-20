@@ -70,7 +70,7 @@
                         </div>
                         <div id="partners">
                             {% for partner in partners  %}
-                                <a href="{{ partner.get_partner_url }}">
+                                <a href="{{ partner.get_partner_url }}" class="partnerlink">
                                 {% thumbnail partner.picture '200' as im %}
                                  <div class="col-sm-6 col-3">
                                     <img src="{{ im.url }}" alt="{{ partner.name }}" width="{{ im.width }}" height="{{ im.height }}">

@@ -176,6 +176,7 @@
     pleaseOwl();
 
     $owl.on('click', '.owl-item a', function(e) {
+
         if($(this).attr('href') == '#'){
             e.preventDefault();
         } else {
@@ -185,6 +186,7 @@
         pleaseOwl();
         $owl.trigger('to.owl.carousel', [$(this).closest('.owl-item').index(), 500]);        
     });
+
     
 
     var destroyOwl = function($owl, reset){

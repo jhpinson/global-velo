@@ -43,7 +43,7 @@
                     <a href="#">Marque</a>
                     <ul>
                     {% for brand in brands %}
-                        <li><a href="#" data-filter="{{ brand.title|slugify }}">{{ brand.title }}</a></li>
+                        <li><a href="#" data-filter=".{{ brand.title|slugify }}">{{ brand.title }}</a></li>
                     {% endfor %}
                     </ul>
                 </li>
@@ -75,22 +75,34 @@
                         {{ bike.brand|slugify }}
                         {% for category in bike.categories.all %} {{ category.short_label }} {% endfor %}
                         {% if bike.second_hand %} occasion{% else %}neuf {% endif %}">
-                        <a href="#">
+                            <a href="#">
                             {% thumbnail bike.picture "450x300" crop="center" as im %}
                                 {% thumbnail bike.picture "900x600" crop="center" as im_hres %}
                                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="low" data-hres="{{ im_hres.url }}">
                                 {% endthumbnail %}
                             {% endthumbnail %}
+                            </a>
                             
                             <div class="title">
-                                <h1>{{ bike.label }} {{ bike.second_hand }}</h1>
+                                <h1><a href="#">{{ bike.label }}</a></h1>
                                 <span class="price">{{ bike.price }} €</span>
+                                <span class="brand partnerlink">
+                                {% for partner in bike.brand.partner_set.all %}
+                                    <a href="{{ partner.get_partner_url }}">
+                                    {% thumbnail partner.picture 'x50' as im %}
+                                        <img class="bike--logo" src="{{ im.url }}" alt="{{ partner.name }}" width="{{ im.width }}" height="{{ im.height }}" alt ="Logo {{ bike.brand }}">
+                                    {% endthumbnail %}
+                                    </a>
+                                {% endfor %}
+                                    
+                                </span>
                             </div>
                             <div class="text">
-                                {{ bike.brand }} — 
+                                <a href="#">{{ bike.brand }} — 
                                 {{ bike.description|safe }}                                
+                                </a>
                             </div>                            
-                        </a>
+                        
                     </div>
                     {% if forloop.last %}
                     <div class="bike andmore" id="andmore">

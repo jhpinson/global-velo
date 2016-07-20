@@ -64,6 +64,35 @@
                         </div>
                         
                     </article>
+
+                    <article id="occasions">
+                        {% for bike in object.brand.bike_set.all  %}
+                            <div class="
+                                bike 
+                                {{ bike.gender }} 
+                                {{ bike.brand|slugify }}
+                                {% for category in bike.categories.all %} {{ category.short_label }} {% endfor %}
+                                {% if bike.second_hand %} occasion{% else %}neuf {% endif %}">
+                                <a href="#">
+                                    {% thumbnail bike.picture "450x300" crop="center" as im %}
+                                        {% thumbnail bike.picture "900x600" crop="center" as im_hres %}
+                                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="low" data-hres="{{ im_hres.url }}">
+                                        {% endthumbnail %}
+                                    {% endthumbnail %}
+                                    
+                                    <div class="title">
+                                        <h1>{{ bike.label }}</h1>
+                                        <span class="price">{{ bike.price }} €</span>
+                                    </div>
+                                    <div class="text">
+                                        {{ bike.brand }} — 
+                                        {{ bike.description|safe }}                                
+                                    </div>                            
+                                </a>
+                            </div>
+                            
+                        {% endfor %}
+                    </article>
             
 
                 </section>

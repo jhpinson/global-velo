@@ -3372,6 +3372,10 @@ main.page {
   text-decoration: none;
 }
 /* line 531, ../scss/global.scss */
+.bike img.bike--logo {
+  display: none;
+}
+/* line 532, ../scss/global.scss */
 .bike .text {
   font-size: .85em;
   line-height: 1.5;
@@ -3382,12 +3386,12 @@ main.page {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
 }
-/* line 540, ../scss/global.scss */
+/* line 541, ../scss/global.scss */
 .bike .text h2, .bike .text h3, .bike .text h4, .bike .text p, .bike .text ul, .bike .text ol {
   display: inline;
   font-size: 1em;
 }
-/* line 542, ../scss/global.scss */
+/* line 543, ../scss/global.scss */
 .bike .price {
   font-size: 1em;
   font-weight: bold;
@@ -3399,7 +3403,7 @@ main.page {
   padding: 1em;
 }
 
-/* line 557, ../scss/global.scss */
+/* line 558, ../scss/global.scss */
 #bikes.alt .bike img {
   width: 70%;
   max-width: 900px;
@@ -3407,15 +3411,15 @@ main.page {
   display: block;
   margin: 0 auto 2em;
 }
-/* line 558, ../scss/global.scss */
+/* line 559, ../scss/global.scss */
 #bikes.alt .bike .low {
   display: none !important;
 }
-/* line 559, ../scss/global.scss */
+/* line 560, ../scss/global.scss */
 #bikes.alt .bike .high {
   display: block !important;
 }
-/* line 561, ../scss/global.scss */
+/* line 562, ../scss/global.scss */
 #bikes.alt .bike h1 {
   font-size: 2.25em;
   margin: 0;
@@ -3423,32 +3427,46 @@ main.page {
   text-align: right;
   text-transform: uppercase;
 }
-/* line 569, ../scss/global.scss */
+/* line 570, ../scss/global.scss */
 #bikes.alt .bike div {
   float: left;
   font-size: 1em;
   line-height: 1.6;
   width: 50%;
 }
-/* line 575, ../scss/global.scss */
+/* line 576, ../scss/global.scss */
 #bikes.alt .bike .price {
   position: static;
   float: right;
   clear: both;
   margin-right: 12px;
 }
-/* line 581, ../scss/global.scss */
+/* line 582, ../scss/global.scss */
 #bikes.alt .bike .text {
   padding-left: 13px;
   margin-top: 0.75em;
   font-size: 1em;
 }
-/* line 582, ../scss/global.scss */
+/* line 583, ../scss/global.scss */
 #bikes.alt .bike p {
   font-size: 1em;
 }
+/* line 584, ../scss/global.scss */
+#bikes.alt .bike .partnerlink {
+  width: auto;
+  padding-right: 0;
+  float: right;
+}
+/* line 589, ../scss/global.scss */
+#bikes.alt .bike img.bike--logo {
+  display: inline-block;
+  height: 50px;
+  margin: 0 40px 0 0;
+  min-width: 0;
+  width: auto;
+}
 
-/* line 586, ../scss/global.scss */
+/* line 601, ../scss/global.scss */
 .andmore {
   align-items: center;
   background: #a9c944 none repeat scroll 0 0;
@@ -3460,35 +3478,35 @@ main.page {
   text-align: center;
   width: 100%;
 }
-/* line 589, ../scss/global.scss */
+/* line 604, ../scss/global.scss */
 .andmore a {
   color: white;
   flex: 1;
 }
 
 /* --------------------------------------------------------------- MAGASIN */
-/* line 604, ../scss/global.scss */
+/* line 619, ../scss/global.scss */
 #partners {
   overflow: auto;
 }
 
-/* line 607, ../scss/global.scss */
-#partners a {
+/* line 622, ../scss/global.scss */
+.partnerlink {
   display: block;
   float: left;
   width: 25%;
   padding-right: 50px;
 }
-/* line 612, ../scss/global.scss */
-#partners a strong {
+/* line 627, ../scss/global.scss */
+.partnerlink strong {
   position: absolute;
   left: -999px;
   width: 1px;
   height: 1px;
   overflow: hidden;
 }
-/* line 617, ../scss/global.scss */
-#partners a:hover img {
+/* line 632, ../scss/global.scss */
+.partnerlink:hover img {
   -webkit-filter: grayscale(0%);
   -webkit-transition: .250ms ease-in-out;
   -moz-filter: grayscale(0%);
@@ -3497,8 +3515,8 @@ main.page {
   -o-transition: .250ms ease-in-out;
   filter: grayscale(0%);
 }
-/* line 627, ../scss/global.scss */
-#partners a img {
+/* line 642, ../scss/global.scss */
+.partnerlink img {
   -webkit-filter: grayscale(100%);
   -webkit-transition: .250ms ease-in-out;
   -moz-filter: grayscale(100%);
@@ -3508,88 +3526,88 @@ main.page {
   filter: grayscale(100%);
 }
 
-/* line 638, ../scss/global.scss */
+/* line 653, ../scss/global.scss */
 .leaflet-compact-attribution {
   display: none;
 }
 
 /* --------------------------------------------------------------- LOCATIONS */
-/* line 642, ../scss/global.scss */
+/* line 657, ../scss/global.scss */
 #locations-splash {
   background-image: url(img/splash-locations.jpg);
 }
 
 /* --------------------------------------------------------------- VENTE */
-/* line 648, ../scss/global.scss */
+/* line 663, ../scss/global.scss */
 #velos-splash {
   background-image: url(img/splash-vente.jpg);
 }
 
-/* line 652, ../scss/global.scss */
+/* line 667, ../scss/global.scss */
 #occasions {
   background: #fff none repeat scroll 0 0;
   overflow: hidden;
   padding-top: 0;
 }
-/* line 656, ../scss/global.scss */
+/* line 671, ../scss/global.scss */
 #occasions .bike {
   width: 50%;
 }
-/* line 658, ../scss/global.scss */
+/* line 673, ../scss/global.scss */
 #occasions .bike .price {
   right: 35px;
   top: 35px;
 }
-/* line 659, ../scss/global.scss */
+/* line 674, ../scss/global.scss */
 #occasions .bike.big {
   width: 100%;
 }
-/* line 660, ../scss/global.scss */
+/* line 675, ../scss/global.scss */
 #occasions .low {
   display: block !important;
 }
-/* line 661, ../scss/global.scss */
+/* line 676, ../scss/global.scss */
 #occasions .high {
   display: none !important;
 }
-/* line 662, ../scss/global.scss */
+/* line 677, ../scss/global.scss */
 #occasions .bike.big .low {
   display: none !important;
 }
-/* line 663, ../scss/global.scss */
+/* line 678, ../scss/global.scss */
 #occasions .bike.big .high {
   display: block !important;
 }
 
 /* --------------------------------------------------------------- SHOP */
-/* line 667, ../scss/global.scss */
+/* line 682, ../scss/global.scss */
 #shop-splash span {
   pointer-events: none;
 }
 
-/* line 671, ../scss/global.scss */
+/* line 686, ../scss/global.scss */
 #accessmap {
   height: 300px;
 }
 
 /* --------------------------------------------------------------- Partners */
-/* line 676, ../scss/global.scss */
+/* line 691, ../scss/global.scss */
 .partner p {
   margin-bottom: 1rem;
 }
 
-/* line 679, ../scss/global.scss */
+/* line 694, ../scss/global.scss */
 .intro p {
   font-size: 1.25em;
   margin-bottom: 1rem;
 }
 
-/* line 683, ../scss/global.scss */
+/* line 698, ../scss/global.scss */
 .partner .detail {
   margin-left: 240px;
 }
 
-/* line 685, ../scss/global.scss */
+/* line 700, ../scss/global.scss */
 .logo {
   float: left;
   background: #fff;
@@ -3601,7 +3619,7 @@ main.page {
 }
 
 /* --------------------------------------------------------------- FORMS */
-/* line 696, ../scss/global.scss */
+/* line 711, ../scss/global.scss */
 form input[type=text],
 form input[type=email],
 form textarea {
@@ -3613,18 +3631,18 @@ form textarea {
   line-height: 1.5;
   margin: 0;
 }
-/* line 707, ../scss/global.scss */
+/* line 722, ../scss/global.scss */
 form .form-group {
   position: relative;
   margin: 1.5em 0;
 }
-/* line 711, ../scss/global.scss */
+/* line 726, ../scss/global.scss */
 form .help-block, form .help-block-error,
 form p {
   color: #666;
   font-weight: 400;
 }
-/* line 713, ../scss/global.scss */
+/* line 728, ../scss/global.scss */
 form label {
   color: #666;
   display: block;
@@ -3633,23 +3651,23 @@ form label {
   width: 20%;
   padding: .5em 0;
 }
-/* line 721, ../scss/global.scss */
+/* line 736, ../scss/global.scss */
 form .control-group {
   margin-bottom: .5em;
 }
-/* line 724, ../scss/global.scss */
+/* line 739, ../scss/global.scss */
 form .controls,
 form .help-block, form .help-block-error,
 form .buttonHolder {
   margin-left: 25%;
 }
-/* line 728, ../scss/global.scss */
+/* line 743, ../scss/global.scss */
 form .controls p,
 form .help-block p, form .help-block-error p,
 form .buttonHolder p {
   margin-left: 0;
 }
-/* line 730, ../scss/global.scss */
+/* line 745, ../scss/global.scss */
 form button,
 form input[type=submit] {
   padding: .5em 1.2em;
@@ -3661,36 +3679,36 @@ form input[type=submit] {
 }
 
 /* --------------------------------------------------------------- FOOTER */
-/* line 744, ../scss/global.scss */
+/* line 759, ../scss/global.scss */
 footer {
   background: #232325;
   color: #777;
   margin-top: 50px;
   padding: 50px 0;
 }
-/* line 751, ../scss/global.scss */
+/* line 766, ../scss/global.scss */
 footer a {
   color: #888;
 }
-/* line 751, ../scss/global.scss */
+/* line 766, ../scss/global.scss */
 footer a:hover {
   color: #A9C944;
 }
-/* line 752, ../scss/global.scss */
+/* line 767, ../scss/global.scss */
 footer p, footer h2 {
   line-height: 1.6;
 }
-/* line 753, ../scss/global.scss */
+/* line 768, ../scss/global.scss */
 footer h2 {
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-/* line 758, ../scss/global.scss */
+/* line 773, ../scss/global.scss */
 footer p + h2 {
   margin-top: 2em;
 }
-/* line 759, ../scss/global.scss */
+/* line 774, ../scss/global.scss */
 footer > div {
   display: -webkit-flex;
   -webkit-flex-direction: row;
@@ -3699,23 +3717,23 @@ footer > div {
   flex-direction: row;
   flex-align: center;
 }
-/* line 766, ../scss/global.scss */
+/* line 781, ../scss/global.scss */
 footer > div > div {
   flex: 1;
   margin: 0 0 0 40px;
 }
-/* line 769, ../scss/global.scss */
+/* line 784, ../scss/global.scss */
 footer > div > div:first-child {
   margin-left: 0;
 }
-/* line 771, ../scss/global.scss */
+/* line 786, ../scss/global.scss */
 footer > div .about img {
   display: block;
   margin-bottom: 2em;
 }
 
 @media (max-width: 850px) {
-  /* line 781, ../scss/global.scss */
+  /* line 796, ../scss/global.scss */
   .subnav {
     width: auto !important;
     border-right: none;
@@ -3727,70 +3745,70 @@ footer > div .about img {
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
   }
-  /* line 791, ../scss/global.scss */
+  /* line 806, ../scss/global.scss */
   .subnav a {
     display: inline-block;
     margin: 0 .5em;
     letter-spacing: 0;
   }
 
-  /* line 798, ../scss/global.scss */
+  /* line 813, ../scss/global.scss */
   .page section {
     float: none;
     margin: 0;
   }
 
-  /* line 799, ../scss/global.scss */
+  /* line 814, ../scss/global.scss */
   .page article {
     padding-top: 50px;
     margin-bottom: 10px;
   }
-  /* line 800, ../scss/global.scss */
+  /* line 815, ../scss/global.scss */
   .page article:first-child {
     padding-top: 20px;
   }
 }
 @media (max-width: 650px) {
-  /* line 810, ../scss/global.scss */
+  /* line 825, ../scss/global.scss */
   #header #menu_toggle {
     display: block;
   }
 
-  /* line 812, ../scss/global.scss */
+  /* line 827, ../scss/global.scss */
   footer > div {
     -webkit-flex-direction: column;
     flex-direction: column;
     text-align: center;
   }
 
-  /* line 813, ../scss/global.scss */
+  /* line 828, ../scss/global.scss */
   footer > div > div {
     margin: 0 0 40px 0;
   }
 
-  /* line 814, ../scss/global.scss */
+  /* line 829, ../scss/global.scss */
   footer > div .about img {
     margin: 0 auto 2em;
   }
 
-  /* line 815, ../scss/global.scss */
+  /* line 830, ../scss/global.scss */
   #partners a {
     width: 50%;
   }
 
-  /* line 817, ../scss/global.scss */
+  /* line 832, ../scss/global.scss */
   #header #logo {
     margin: 0 auto;
     display: block;
     float: none;
   }
 
-  /* line 818, ../scss/global.scss */
+  /* line 833, ../scss/global.scss */
   #header nav ul {
     display: none;
   }
 
-  /* line 819, ../scss/global.scss */
+  /* line 834, ../scss/global.scss */
   #header nav.visible ul {
     display: block;
     background: #232325;
@@ -3802,99 +3820,99 @@ footer > div .about img {
     width: 100%;
     padding: 2.5em 0 2em;
   }
-  /* line 829, ../scss/global.scss */
+  /* line 844, ../scss/global.scss */
   #header nav.visible ul li {
     line-height: 1.5;
   }
 
-  /* line 832, ../scss/global.scss */
+  /* line 847, ../scss/global.scss */
   .home .navbox {
     display: block;
   }
 
-  /* line 833, ../scss/global.scss */
+  /* line 848, ../scss/global.scss */
   .home .navbox li {
     margin: 0 0 40px;
   }
 }
 @media (max-width: 500px) {
-  /* line 839, ../scss/global.scss */
+  /* line 854, ../scss/global.scss */
   .page article h1 {
     text-align: center;
   }
 
-  /* line 840, ../scss/global.scss */
+  /* line 855, ../scss/global.scss */
   form label {
     float: none;
     width: auto;
   }
 
-  /* line 841, ../scss/global.scss */
+  /* line 856, ../scss/global.scss */
   form .controls, form .buttonHolder {
     margin-left: 0;
   }
 
-  /* line 843, ../scss/global.scss */
+  /* line 858, ../scss/global.scss */
   #bikes {
     padding: 20px 50px;
   }
 
-  /* line 844, ../scss/global.scss */
+  /* line 859, ../scss/global.scss */
   #bikes {
     padding: 0;
   }
 
-  /* line 845, ../scss/global.scss */
+  /* line 860, ../scss/global.scss */
   #bikes .owl-nav div {
     position: static;
     margin-top: 0;
   }
 
-  /* line 846, ../scss/global.scss */
+  /* line 861, ../scss/global.scss */
   #bikes .owl-nav div.owl-prev {
     float: left;
     margin-left: 20px;
   }
 
-  /* line 847, ../scss/global.scss */
+  /* line 862, ../scss/global.scss */
   #bikes .owl-nav div.owl-next {
     float: right;
     margin-right: 20px;
   }
 
-  /* line 848, ../scss/global.scss */
+  /* line 863, ../scss/global.scss */
   #bikes .owl-nav {
     overflow: hidden;
   }
 
-  /* line 849, ../scss/global.scss */
+  /* line 864, ../scss/global.scss */
   #bikes .owl-carousel .owl-stage-outer {
     margin-right: 0;
   }
 
-  /* line 850, ../scss/global.scss */
+  /* line 865, ../scss/global.scss */
   .bike .price {
     right: 15px;
   }
 
-  /* line 851, ../scss/global.scss */
+  /* line 866, ../scss/global.scss */
   #header li {
     display: block;
     margin: 0 0 .5em;
   }
 
-  /* line 853, ../scss/global.scss */
+  /* line 868, ../scss/global.scss */
   #occasions .bike {
     width: 100%;
   }
 }
 @media (max-width: 360px) {
-  /* line 860, ../scss/global.scss */
+  /* line 875, ../scss/global.scss */
   .wrapper {
     padding: 0 20px;
   }
 
-  /* line 861, ../scss/global.scss */
+  /* line 876, ../scss/global.scss */
   #header #logo {
     background-position: 0 center;
     background-size: 100% auto;
