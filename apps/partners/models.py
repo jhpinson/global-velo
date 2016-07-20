@@ -9,6 +9,7 @@ from sorl.thumbnail.fields import ImageField
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 
+from bikes.models import Brand
 
 class Partner(OrderedModel, TimeStampedModel):
 
@@ -28,6 +29,8 @@ class Partner(OrderedModel, TimeStampedModel):
 
     image = ImageField('Image', upload_to='partners/', null=True, blank=True)
     texte = models.TextField('Texte', help_text='', null=True, blank=True)
+
+    brand = models.ForeignKey(Brand, verbose_name="Marque", null=True, blank=True)
 
     
     def get_partner_url(self):
